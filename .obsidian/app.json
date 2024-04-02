@@ -1,0 +1,25 @@
+{
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "spellcheckDictionary": [
+    "biophysically",
+    "biophysically",
+    "OpenCARP",
+    "in-silico",
+    "in-silico",
+    "biophysically",
+    "OCNC",
+    "PDE",
+    "OCNC",
+    "shapley",
+    "In-Silico",
+    "UGent",
+    "MPINB"
+  ],
+  "alwaysUpdateLinks": true
+}

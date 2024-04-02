@@ -1,0 +1,15 @@
+{
+  "statusBar": [],
+  "altBar": [
+    {
+      "prefix": "",
+      "suffix": " files",
+      "metric": {
+        "type": 2,
+        "counter": 3
+      }
+    }
+  ],
+  "countComments": false,
+  "collectStats": false
+}

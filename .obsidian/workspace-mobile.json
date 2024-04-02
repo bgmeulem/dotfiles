@@ -1,0 +1,190 @@
+{
+  "main": {
+    "id": "940cadea624c5bd5",
+    "type": "split",
+    "children": [
+      {
+        "id": "b8f02b6c4f1bffee",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "152318e632f9534d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Projects/ISF/ISF.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a92def5f62dc6844",
+            "type": "leaf",
+            "state": {
+              "type": "google-calendar-view-month",
+              "state": {}
+            }
+          },
+          {
+            "id": "2f43e1c25db26a50",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Projects/ISF/Publish/What can ISf do.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7539554239832ba6",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "89ad74918d13ac0f",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "f5da8dace39aa833",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "34314498da6ead92",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "7166ed54240d7044",
+        "type": "leaf",
+        "state": {
+          "type": "all-properties",
+          "state": {
+            "sortOrder": "frequency"
+          }
+        }
+      },
+      {
+        "id": "efeae597daa4da70",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "054f3f764e5f744f",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "7b478fbffd9269ca",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "Projects/ISF/Publish/What can ISf do.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "2b45ab647444c768",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "Projects/ISF/Publish/What can ISf do.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "6ef374fe026c6fdb",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "Projects/ISF/Publish/What can ISf do.md"
+          }
+        }
+      },
+      {
+        "id": "825d2fc1eb907c21",
+        "type": "leaf",
+        "state": {
+          "type": "calendar",
+          "state": {}
+        }
+      }
+    ]
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "2f43e1c25db26a50",
+  "lastOpenFiles": [
+    "Projects/ISF/ISF.md",
+    "/Home.md",
+    "Projects/ISF/Publish/Todo.md",
+    "HPC@MPINB/Stuff.md",
+    "Presentations/20240221_Lab_Meeting.pptx",
+    "HPC@MPINB/Remote development on HPC with VSCode.md",
+    "quiz.md",
+    "/Projects/ISF/Publish/What can ISf do.md",
+    "/Projects/ISF/ISF.md",
+    "/Projects/ISF/Develop.md",
+    "Reisje met de bende.md",
+    "Projects/ISF/Publish/What can ISf do.md",
+    "Home.md"
+  ]
+}
