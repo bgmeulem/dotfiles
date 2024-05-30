@@ -1,0 +1,246 @@
+{
+  "main": {
+    "id": "a61e45d374c025c6",
+    "type": "split",
+    "children": [
+      {
+        "id": "6cf23fbff2221756",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5b38aab6a1655fa7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Projects/ISF/Publish/What can ISf do.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ea6376f8fe820995",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Projects/MS thesis/Meeting 04-03-2024.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2d7717dad18a4146",
+    "type": "split",
+    "children": [
+      {
+        "id": "7d54745557d6b895",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5718b01757e48d60",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9b4abf3404f2487f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "apptainer",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "952d1357df0018ca",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "6537b8468ce51474",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "right": {
+    "id": "de97fa1a1ac717f7",
+    "type": "split",
+    "children": [
+      {
+        "id": "53e6c9adfbc7855e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e1e5883e394ef2c7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Projects/MS thesis/Meeting 04-03-2024.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c02593637b988506",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Projects/MS thesis/Meeting 04-03-2024.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1930db808fe0043b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "e1cc33edc2b8b52e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Projects/MS thesis/Meeting 04-03-2024.md"
+              }
+            }
+          },
+          {
+            "id": "c7e9a41783bad104",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "d262236e1071e155",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              }
+            }
+          },
+          {
+            "id": "35de4e8bc2f074ec",
+            "type": "leaf",
+            "state": {
+              "type": "google-calendar-view-month",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "ea6376f8fe820995",
+  "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "Projects/MS thesis/Meeting 04-03-2024.md",
+    "Projects/MS thesis/Thesis Chantal.md",
+    "Projects/ISF/Publish/What can ISf do.md",
+    "Projects/Untitled",
+    "Presentations/20231017_Lab_Meeting.pptx",
+    "Presentations",
+    "Presentations/pptA9A6.tmp",
+    "Presentations/ppt7ECC.tmp",
+    "Presentations/ppt648C.tmp",
+    "Presentations/pptBFDF.tmp",
+    "Presentations/ppt2732.tmp",
+    "Presentations/pptC9EE.tmp",
+    "Presentations/ppt7356.tmp",
+    "Projects/ISF/Publish/Todo.md",
+    "Reisje met de bende.md",
+    "quiz.md",
+    "Projects/ISF/ISF.md",
+    "Questions.md",
+    "Projects/ISF/Develop.md",
+    "Projects/ISF/Publish/Meeting marcel.md",
+    "Projects/ISF/Publish/What can ISF do.md",
+    "Projects/ISF/ISF Overview.md",
+    "Home.md",
+    "Projects/ISF/Publish/py39.md",
+    "Projects/ISF/Publish/Questions.md",
+    "Projects/ISF/Publish/Global mdb register.md",
+    "Projects/ISF/Publish/Flashcards/Single Cell Input Mapper.md",
+    "Projects/ISF/Publish/Flashcards.md",
+    "Projects/ISF/Publish/Go over all notebooks.md",
+    "Projects/ISF/new isf.md",
+    "Projects/ISF/Publish/Felipes interneurons.md",
+    "Projects/ISF/Publish/Abstract dataframe backend.md",
+    "Projects/Biophysics/Hypotheses.md",
+    "Projects/Biophysics/L5PT.md",
+    "Projects/Biophysics/Machine Learning.md",
+    "Pasted image 20230823144219.png",
+    "Asset 9.png",
+    "mpg-logo.png",
+    "mpg-logo_3.svg",
+    "Presentations/posters/objectives.PNG"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "show-checkboxes": true,
+  "tag-colors": [
+    {
+      "tagKey": "#personal",
+      "color": "rgba(202, 213, 255, 1)",
+      "backgroundColor": "rgba(142, 120, 152, 0.35)"
+    },
+    {
+      "tagKey": "#biophysics",
+      "color": "rgba(103, 187, 163, 1)",
+      "backgroundColor": "rgba(68, 91, 88, 0.5)"
+    },
+    {
+      "tagKey": "#isf",
+      "color": "rgba(255, 144, 144, 1)",
+      "backgroundColor": "rgba(75, 67, 67, 1)"
+    },
+    {
+      "tagKey": "antwerp",
+      "color": "rgba(227, 166, 255, 1)",
+      "backgroundColor": "rgba(99, 86, 107, 0.35)"
+    },
+    {
+      "tagKey": "read",
+      "color": "rgba(99, 189, 219, 1)",
+      "backgroundColor": "rgba(70, 102, 128, 0.29)"
+    },
+    {
+      "tagKey": "presentation",
+      "color": "rgba(255, 157, 11, 1)",
+      "backgroundColor": "rgba(128, 102, 70, 0.29)"
+    }
+  ]
+}
