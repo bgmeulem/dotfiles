@@ -15,7 +15,7 @@ configuration {
     display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
-	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+	drun-display-format:        "{name}";
 	window-format:              "{w} · {c} · {t}";
 }
 
@@ -52,12 +52,11 @@ configuration {
 /*****----- Main Window -----*****/
 window {
     /* properties for window widget */
-    transparency:                "real";
+    transparency:                0.5;
     location:                    center;
     anchor:                      center;
     fullscreen:                  true;
-    width:                       1366px;
-    height:                      768px;
+    height:                      100%;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -77,10 +76,10 @@ mainbox {
     enabled:                     true;
     spacing:                     20px;
     margin:                      0px;
-    padding:                     35%;
+    padding:                     40% 25% 21% 25%;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
-    border-color:                @border-colour;
+    border-color:                red;
     background-color:            transparent;
     children:                    [ "inputbar", "listview" ];
 }
@@ -88,11 +87,11 @@ mainbox {
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     0px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px;
-    border-radius:               0px;
+    border-radius:               10px;
     border-color:                @border-colour;
     background-color:            @background-colour;
     text-color:                  @foreground-colour;
@@ -100,24 +99,26 @@ inputbar {
 }
 
 prompt {
-    enabled:                     true;
-    background-color:            inherit;
+    enabled:                     false;
+    background-color:            black;
     text-color:                  inherit;
 }
 textbox-prompt-colon {
     enabled:                     true;
-    expand:                      false;
+    expand:                      true;
     str:                         "::";
-    background-color:            inherit;
+    background-color:            transparent;
     text-color:                  inherit;
+
 }
 entry {
     enabled:                     true;
-    background-color:            inherit;
+    background-color:            transparent;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "";
-    placeholder-color:           inherit;
+    padding:                     10px 10px 10px 10px;
+    placeholder:                 "search";
+    placeholder-color:           rgba(255, 255, 255, 0.5);
 }
 
 /*****----- Listview -----*****/
@@ -126,20 +127,20 @@ listview {
     columns:                     1;
     lines:                       12;
     cycle:                       true;
-    dynamic:                     true;
+    dynamic:                     false;
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                true;
+    fixed-height:                false;
     fixed-columns:               true;
     
-    spacing:                     10px;
+    spacing:                     0px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               10px;
     border-color:                @border-colour;
-    background-color:            transparent;
+    background-color:            @background-colour;
     text-color:                  @foreground-colour;
     cursor:                      "default";
 }
@@ -164,15 +165,15 @@ element {
     cursor:                      pointer;
 }
 element normal.normal {
-    background-color:            var(normal-background);
+    background-color:            transparent;
     text-color:                  var(normal-foreground);
 }
 element normal.urgent {
-    background-color:            var(urgent-background);
+    background-color:            transparent;
     text-color:                  var(urgent-foreground);
 }
 element normal.active {
-    background-color:            var(active-background);
+    background-color:            transparent;
     text-color:                  var(active-foreground);
 }
 element selected.normal {
@@ -188,7 +189,7 @@ element selected.active {
     text-color:                  var(selected-active-foreground);
 }
 element alternate.normal {
-    background-color:            var(alternate-normal-background);
+    background-color:            transparent;
     text-color:                  var(alternate-normal-foreground);
 }
 element alternate.urgent {
@@ -202,8 +203,9 @@ element alternate.active {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        24px;
+    size:                        40px;
     cursor:                      inherit;
+    padding: 10px;
 }
 element-text {
     background-color:            transparent;
