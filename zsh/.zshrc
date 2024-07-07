@@ -113,3 +113,5 @@ source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 export PATH=$PATH:/sbin:/usr/sbin/:~/prgr
 alias dots="cd ~/.dotfiles"
+
+export PATH=$PATH:/home/bgmeulem/.spicetify

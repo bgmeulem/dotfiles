@@ -23,4 +23,4 @@ vim.api.nvim_create_autocmd("VimEnter", {
 
 require("vim-options")
 require("lazy").setup("plugins")
-vim.cmd("colorscheme rose-pine-dawn")
+vim.cmd("colorscheme rose-pine")

@@ -10,7 +10,7 @@
 		"custom/launcher",
 		"hyprland/workspaces#number",
 		"custom/spotify",
-		"cava"
+		"custom/cava"
 	],
 
 	"modules-center": [
@@ -149,7 +149,7 @@
 	        },
 	    },
 
-		    "cava": {
+		    "custom/cava": {
 		      "autosens": 1,
 		      "bar_delimiter": 0,
 		      "bars": 18,
@@ -182,7 +182,8 @@
 			"interval": 60,
 			"align": 0,
 			"rotate": 0,
-			"tooltip-format": "<big>{:%B %Y}</big>\n<tt><big>{calendar}</big></tt>",
+			// "tooltip-format": "<big>{:%B %Y}</big>\n<tt><big>{calendar}</big></tt>",
+			"tooltip-format": "<tt><big>{calendar}</big></tt>",
 			"format": "{:%I:%M %p}",
 			"format-alt": "{:%a %b %d}",	
 		},
@@ -190,7 +191,8 @@
 
 		"clock#vertical": {
 			"interval": 60,
-			"tooltip-format": "<big>{:%B %Y}</big>\n<tt><big>{calendar}</big></tt>",
+			// "tooltip-format": "<big>{:%B %Y}</big>\n<tt><big>{calendar}</big></tt>",
+			"tooltip-format": "<tt><big>{calendar}</big></tt>",
 			"format": "{:%I\n%M}",	
 		},
 
