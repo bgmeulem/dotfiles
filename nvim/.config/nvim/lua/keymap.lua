@@ -1,3 +1,6 @@
+-- NOTE: plugin-specific keybinds are generally defined during the plugin config instead of here
+-- These are general keybinds that donù't require a plugin setup'
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
