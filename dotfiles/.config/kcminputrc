@@ -1,0 +1,7 @@
+[Libinput][1739][32402][DELL07EA:00 06CB:7E92 Mouse]
+NaturalScroll=false
+
+[Libinput][1739][32402][DELL07EA:00 06CB:7E92 Touchpad]
+DisableWhileTyping=false
+Enabled=true
+NaturalScroll=false
