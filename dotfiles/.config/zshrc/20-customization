@@ -46,3 +46,6 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/EDM115-newline.omp.j
 
 # Shipped Theme
 # eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/agnoster.omp.json)"
+
+# Manpage syntax highlighting
+export MANPAGER="less -R --use-color -Dd+r -Du+b"
