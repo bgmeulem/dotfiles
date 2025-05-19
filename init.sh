@@ -8,6 +8,8 @@ git submodule update
 # Stow the contents of the directory "dotfiles" to $HOME
 stow -v -R -t ~ dotfiles
 
+ln pkglist.txt ~/.pacbackup.txt
+
 # Install wikiman sources: Arch and tldr
 if [[ ! -d /usr/share/doc/arch-wiki ]] || [[ ! -d /usr/share/doc/tldr-pages ]]; then
 	mkdir wikiman
