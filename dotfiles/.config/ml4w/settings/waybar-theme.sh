@@ -1,1 +1,1 @@
-/my_themes;/my_themes/light
+/transparent;/transparent/light
