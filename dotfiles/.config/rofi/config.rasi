@@ -20,7 +20,7 @@ configuration {
     // display-run:                 " ";
     // display-filebrowser:         "  ";
     // display-window:              "  ";
-	drun-display-format:        "{name}";
+    drun-display-format:        "{name}";
     hover-select:               false;
     scroll-method:              1;
     me-select-entry:            "";
@@ -30,19 +30,16 @@ configuration {
 }
 
 /* ---- Load font ---- */
-@import "~/.config/ml4w/settings/rofi-font.rasi"
+@import "~/.config/rofi/font.rasi"
 
 /* ---- Load colors ---- */
 @theme "~/.config/rofi/colors.rasi"
 
-/* ---- Load wallpaper ---- */
-@import "~/.config/ml4w/cache/current_wallpaper.rasi"
-
 /* ---- Load border width ---- */
-@import "~/.config/ml4w/settings/rofi-border.rasi"
+@import "~/.config/rofi/border.rasi"
 
 /* ---- Load border radius ---- */
-@import "~/.config/ml4w/settings/rofi-border-radius.rasi"
+@import "~/.config/rofi/border-radius.rasi"
 
 /* ---- Map colors ---- */
 * {
@@ -53,7 +50,7 @@ configuration {
 
 // Main //
 window {
-    height:                      35em;
+    height:                      20em;
     // width:                       56em;
     width:                       35em;
     transparency:                "real";
@@ -62,10 +59,11 @@ window {
     cursor:                      "default";
     spacing:                     0em;
     padding:                     0em;
-    border:                      @border-width;
-    border-color:                @color11;
+    // border:                      @border-width;
+    // border-color:                @color11;
     border-radius:               @border-radius;
-    background-color:            @background;
+    // background-color:            @background;
+    background-color:		#000000dd;
 }
 
 mainbox {
@@ -75,7 +73,7 @@ mainbox {
     orientation:                 vertical;
     children:                    [ "inputbar" , "listbox" ];
     background-color:            transparent;
-    background-image:            @current-image;
+    /* background-image:            @current-image; */
 }
 
 
@@ -83,7 +81,7 @@ mainbox {
 inputbar {
     enabled:                     true;
     spacing:                     0em;
-    padding:                     5em;
+    padding:                     1em;
     children:                    [ "textbox-prompt-colon", "entry" ];
     background-color:            transparent;
     // background-image:            url("~/.config/ml4w/cache/current_wallpaper", width);
@@ -96,7 +94,8 @@ textbox-prompt-colon {
     padding:                     1em 0.2em 0em 0em;
     text-color:                  @foreground;
     border-radius:               2em 0em 0em 2em;
-    background-color:            @color5;
+    // background-color:            @color5;
+    background-color:            transparent;
     // background-image:            url("~/.config/ml4w/cache/current_wallpaper", width);
 }
 
@@ -105,7 +104,8 @@ entry {
     border-radius:               0em 2em 2em 0em;
     spacing:                     1em;
     padding:                     1em;
-    background-color:            @color5;
+    /* background-color:            @color5; */
+    background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      text;
     placeholder:                 "Search";
@@ -119,11 +119,11 @@ listbox {
     orientation:                 horizontal;
     // children:                    [ "listview" , "mode-switcher" ];
     children:                    [ "listview"];
-    background-color:            @background;
+    background-color:           transparent;
 }
 
 listview {
-    padding:                     1.5em;
+    padding:                     1em;
     spacing:                     0.5em;
     enabled:                     true;
     columns:                     1;
@@ -176,6 +176,7 @@ element {
 
 element selected.normal {
     background-color:            @color5;
+    background-color:            #fefefe33;
     text-color:                  @foreground;
     border-radius:               1.5em;
 }
