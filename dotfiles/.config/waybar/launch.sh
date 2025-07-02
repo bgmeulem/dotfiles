@@ -13,11 +13,6 @@ pkill waybar
 sleep 0.5
 
 # -----------------------------------------------------
-# Default theme: /THEMEFOLDER;/VARIATION
-# -----------------------------------------------------
-themestyle="/ml4w-modern;/ml4w-modern/light"
-
-# -----------------------------------------------------
 # Get current theme information from ~/.config/ml4w/settings/waybar-theme.sh
 # -----------------------------------------------------
 if [ -f ~/.config/ml4w/settings/waybar-theme.sh ]; then
