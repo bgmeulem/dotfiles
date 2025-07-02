@@ -68,9 +68,9 @@
   // Cliphist
    "custom/cliphist": {
     "format": "",
-    "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
-    "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
-    "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
+    "on-click": "sleep 0.1 && ~/.scripts/cliphist.sh",
+    "on-click-right": "sleep 0.1 && ~/.scripts/cliphist.sh d",
+    "on-click-middle": "sleep 0.1 && ~/.scripts/cliphist.sh w",
     "tooltip-format": "Left: Open clipboard Manager\nRight: Delete an entry\nMiddle: Clear list"
   },
 
@@ -79,7 +79,7 @@
     "format": "  {}",
     "escape": true,
     "return-type": "json",
-    "exec": "~/.config/ml4w/scripts/updates.sh",
+    "exec": "~/.scripts/updates.sh",
     "interval": 1800,
     "on-click": "~/.config/ml4w/settings/installupdates.sh",
     "on-click-right": "~/.config/ml4w/settings/software.sh"
@@ -89,7 +89,7 @@
   "custom/wallpaper": {
     "format": "",
     "on-click": "bash -c waypaper &",
-    "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
+    "on-click-right": "~/.scripts/wallpaper-effects.sh",
     "tooltip-format": "Left: Select a wallpaper\nRight: Select wallpaper effect"
   },
 
@@ -100,12 +100,6 @@
     "tooltip-format": "Select a waybar theme"
   },
 
-  // Settings
-  "custom/settings": {
-    "format": "",
-    "on-click": "sleep 0.1 && com.ml4w.dotfilessettings",
-    "tooltip-format": "ML4W Dotfiles Settings"
-  },
 
   // Keybindings
   "custom/keybindings": {
@@ -114,13 +108,6 @@
     "tooltip": false
   },
 
-
-  // Windows VM
-  "custom/windowsvm": {
-    "format": "",
-    "on-click": "~/.config/ml4w/scripts/launchvm.sh",
-    "tooltip": false
-  },
 
   // Rofi Application Launcher
    "custom/appmenu": {
@@ -143,7 +130,7 @@
   // Power Menu
   "custom/exit": {
     "format": "",
-    "on-click": "~/.config/ml4w/scripts/wlogout.sh",
+    "on-click": "~/.scripts/wlogout.sh",
     "on-click-right": "hyprlock",
     "tooltip-format": "Left: Power menu\nRight: Lock screen"
   },
@@ -311,7 +298,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
     "on-click": "~/.config/ml4w/settings/networkmanager.sh",
-    "on-click-right": "~/.config/ml4w/scripts/nm-applet.sh toggle",
+    "on-click-right": "~/.scripts/nm-applet.sh toggle",
   },
 
   // Battery
