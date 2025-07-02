@@ -73,7 +73,7 @@ window#waybar {
 tooltip {
     border-radius: 16px;
     background-color: black;
-    opacity:0.8;
+    opacity:0.9;
     padding:15px;
     margin:0px;
 }
@@ -114,7 +114,7 @@ window#waybar.empty #window {
     font-weight: normal;
     font-style: normal;
     opacity:0.8;
-    border: 3px solid @backgroundlight;
+    /* border: 3px solid @backgroundlight; */
 }
 
 #taskbar button {
@@ -478,4 +478,21 @@ window#waybar.empty #window {
     -gtk-icon-effect: highlight;
 }
 
+#tray menu {
+    background-color: #000000;
+    opacity: 0.9;
+    border-radius: 0.5em;
+    border: none;
+}
+
+#tray decoration {
+    box-shadow: none;
+}
+
+#tray window.popup {
+    background-color: @transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
 
