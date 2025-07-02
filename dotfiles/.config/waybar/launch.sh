@@ -37,7 +37,7 @@ fi
 # -----------------------------------------------------
 # Loading the configuration
 # -----------------------------------------------------
-config_file="config"
+config_file="config.jsonc"
 style_file="style.css"
 
 # Standard files can be overwritten with an existing config-custom or style-custom.css
