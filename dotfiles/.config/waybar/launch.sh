@@ -21,9 +21,9 @@ themestyle="/ml4w-modern;/ml4w-modern/light"
 # Get current theme information from ~/.config/ml4w/settings/waybar-theme.sh
 # -----------------------------------------------------
 if [ -f ~/.config/ml4w/settings/waybar-theme.sh ]; then
-    themestyle=$(cat ~/.config/ml4w/settings/waybar-theme.sh)
+    themestyle=$(cat ~/.config/waybar/waybar-theme.sh)
 else
-    touch ~/.config/ml4w/settings/waybar-theme.sh
+    touch ~/.config/waybar/waybar-theme.sh
     echo "$themestyle" >~/.config/ml4w/settings/waybar-theme.sh
 fi
 

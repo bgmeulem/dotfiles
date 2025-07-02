@@ -36,7 +36,6 @@
       "firefoxdeveloperedition": "firefox-developer-edition"
     },
     "rewrite": {
-      "Firefox Web Browser": "Firefox",
       "Foot Server": "Terminal"
     }
   },
@@ -54,12 +53,6 @@
     "separate-outputs": true
   },
 
-  // ML4W Welcome App
-  "custom/ml4w-welcome": {
-    "on-click": "flatpak run com.ml4w.sidebar",
-    "format": " ",
-    "tooltip-format": "Open ML4W Sidebar App"
-  },
 
   // Empty
   "custom/empty": {
@@ -121,19 +114,6 @@
     "tooltip": false
   },
 
-  // ChatGPT Launcher
-  "custom/chatgpt": {
-    "format": " ",
-    "on-click": "~/.config/ml4w/settings/ai.sh",
-    "tooltip-format": "AI Support"
-  },
-
-  // Calculator
-  "custom/calculator": {
-    "format": "",
-    "on-click": "qalculate-gtk",
-    "tooltip-format": "Open calculator"
-  },
 
   // Windows VM
   "custom/windowsvm": {
