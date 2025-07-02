@@ -1,1 +1,1 @@
-/transparent;/transparent/light
+/default;/default/light
