@@ -28,22 +28,26 @@ window#waybar {
 
 #workspaces {
     /* background: @workspacesbackground1; */
-    margin: 2px 1px 3px 1px;
-    padding: 0px 1px;
+    margin: 2px 0px 3px 0px;
+    padding: 0px 0px;
     border-radius: 15px;
     border: 0px;
-    font-weight: bold;
-    font-style: normal;
+    min-height: 5px;
+    /* font-weight: bold; */
+    /* font-style: normal; */
     opacity: 0.8;
-    font-size: 16px;
-    color: @textcolor1;
+    font-size: 0px;
+    color: @transparent;
 }
 
 #workspaces button {
-    padding: 0px 5px;
-    margin: 4px 3px;
-    border-radius: 15px;
+    padding: 0px 0px;
+    margin: 8px 3px;
+    min-height: 5px;
+    font-size: 0px;
+    border-radius: 10px;
     border: 0px;
+    min-width: 11px;
     color: @textcolor1;
     background-color: @workspacesbackground2;
     transition: all 0.3s ease-in-out;
@@ -59,9 +63,9 @@ window#waybar {
     opacity:1.0;
 }
 
-#workspaces button:hover {
-    color: @textcolor1;
-    background: @workspacesbackground2;
+#workspaces button:not(.active):hover {
+    color: @textcolor2;
+    background-color: @workspacesbackground1;
     border-radius: 15px;
     opacity:0.7;
 }

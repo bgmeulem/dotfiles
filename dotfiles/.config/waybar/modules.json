@@ -1,10 +1,3 @@
-//  __  __           _       _
-// |  \/  | ___   __| |_   _| | ___  ___
-// | |\/| |/ _ \ / _` | | | | |/ _ \/ __|
-// | |  | | (_) | (_| | |_| | |  __/\__ \
-// |_|  |_|\___/ \__,_|\__,_|_|\___||___/
-//
-//
 {
   // Workspaces
   "hyprland/workspaces": {
@@ -91,40 +84,6 @@
     "on-click": "bash -c waypaper &",
     "on-click-right": "~/.scripts/wallpaper-effects.sh",
     "tooltip-format": "Left: Select a wallpaper\nRight: Select wallpaper effect"
-  },
-
-  // Waybar Themes
-  "custom/waybarthemes": {
-    "format": "",
-    "on-click": "~/.config/waybar/themeswitcher.sh",
-    "tooltip-format": "Select a waybar theme"
-  },
-
-
-  // Keybindings
-  "custom/keybindings": {
-    "format": "",
-    "on-click": "~/.config/hypr/scripts/keybindings.sh",
-    "tooltip": false
-  },
-
-
-  // Rofi Application Launcher
-   "custom/appmenu": {
-    // START APPS LABEL
-    "format": "Apps",
-    // END APPS LABEL
-    "on-click": "sleep 0.2;pkill rofi || rofi -show drun -replace",
-    "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
-    "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
-  },
-
-  // Rofi Application Launcher
-  "custom/appmenuicon": {
-    "format": "",
-    "on-click": "sleep 0.2;rofi -show drun -replace",
-    "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
-    "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
   },
 
   // Power Menu
