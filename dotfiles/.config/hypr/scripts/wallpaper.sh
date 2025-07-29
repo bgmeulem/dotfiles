@@ -21,17 +21,14 @@ fi
 # -----------------------------------------------------
 
 force_generate=0
-generatedversions="$HOME/.config/ml4w/cache/wallpaper-generated"
-waypaperrunning=$HOME/.config/ml4w/cache/waypaper-running
-cachefile="$HOME/.config/ml4w/cache/current_wallpaper"
-blurredwallpaper="$HOME/.config/ml4w/cache/blurred_wallpaper.png"
-squarewallpaper="$HOME/.config/ml4w/cache/square_wallpaper.png"
-rasifile="$HOME/.config/ml4w/cache/current_wallpaper.rasi"
-blurfile="$HOME/.config/ml4w/settings/blur.sh"
+generatedversions="$HOME/.cache/waypaper/wallpaper-generated"
+waypaperrunning=$HOME/.cache/waypaper/waypaper-running
+cachefile="$HOME/.cache/waypaper/current_wallpaper"
+blurredwallpaper="$HOME/.cache/waypaper/blurred_wallpaper.png"
+squarewallpaper="$HOME/.cache/waypaper/square_wallpaper.png"
+rasifile="$HOME/.cache/waypaper/current_wallpaper.rasi"
 defaultwallpaper="$HOME/wallpaper/default.jpg"
-wallpapereffect="$HOME/.config/ml4w/settings/wallpaper-effect.sh"
 blur="50x30"
-blur=$(cat $blurfile)
 
 # Ensures that the script only run once if wallpaper effect enabled
 if [ -f $waypaperrunning ]; then
@@ -78,57 +75,12 @@ wallpaperfilename=$(basename $wallpaper)
 echo ":: Wallpaper Filename: $wallpaperfilename"
 
 # -----------------------------------------------------
-# Wallpaper Effects
-# -----------------------------------------------------
-
-if [ -f $wallpapereffect ]; then
-    effect=$(cat $wallpapereffect)
-    if [ ! "$effect" == "off" ]; then
-        used_wallpaper=$generatedversions/$effect-$wallpaperfilename
-        if [ -f $generatedversions/$effect-$wallpaperfilename ] && [ "$force_generate" == "0" ] && [ "$use_cache" == "1" ]; then
-            echo ":: Use cached wallpaper $effect-$wallpaperfilename"
-        else
-            echo ":: Generate new cached wallpaper $effect-$wallpaperfilename with effect $effect"
-            notify-send --replace-id=1 "Using wallpaper effect $effect..." "with image $wallpaperfilename" -h int:value:33
-            source $HOME/.config/hypr/effects/wallpaper/$effect
-        fi
-        echo ":: Loading wallpaper $generatedversions/$effect-$wallpaperfilename with effect $effect"
-        echo ":: Setting wallpaper with $used_wallpaper"
-        touch $waypaperrunning
-        waypaper --wallpaper $used_wallpaper
-    else
-        echo ":: Wallpaper effect is set to off"
-    fi
-else
-    effect="off"
-fi
-
-# -----------------------------------------------------
 # Execute matugen
 # -----------------------------------------------------
 
 echo ":: Execute matugen with $used_wallpaper"
 $HOME/.cargo/bin/matugen image $used_wallpaper -m "dark"
 
-# -----------------------------------------------------
-# Walcord (NOT SUPPORTED)
-# -----------------------------------------------------
-
-if type walcord >/dev/null 2>&1; then
-    walcord
-fi
-
-# -----------------------------------------------------
-# Reload Waybar
-# -----------------------------------------------------
-
-killall -SIGUSR2 waybar
-
-# -----------------------------------------------------
-# Reload nwg-dock-hyprland
-# -----------------------------------------------------
-
-$HOME/.config/nwg-dock-hyprland/launch.sh &
 
 # -----------------------------------------------------
 # Update Pywalfox
@@ -148,20 +100,20 @@ swaync-client -rs
 # Created blurred wallpaper
 # -----------------------------------------------------
 
-if [ -f $generatedversions/blur-$blur-$effect-$wallpaperfilename.png ] && [ "$force_generate" == "0" ] && [ "$use_cache" == "1" ]; then
-    echo ":: Use cached wallpaper blur-$blur-$effect-$wallpaperfilename"
+if [ -f $generatedversions/blur-$blur-$wallpaperfilename.png ] && [ "$force_generate" == "0" ] && [ "$use_cache" == "1" ]; then
+    echo ":: Use cached wallpaper blur-$blur-$wallpaperfilename"
 else
-    echo ":: Generate new cached wallpaper blur-$blur-$effect-$wallpaperfilename with blur $blur"
+    echo ":: Generate new cached wallpaper blur-$blur-$wallpaperfilename with blur $blur"
     # notify-send --replace-id=1 "Generate new blurred version" "with blur $blur" -h int:value:66
     magick $used_wallpaper -resize 75% $blurredwallpaper
     echo ":: Resized to 75%"
     if [ ! "$blur" == "0x0" ]; then
         magick $blurredwallpaper -blur $blur $blurredwallpaper
-        cp $blurredwallpaper $generatedversions/blur-$blur-$effect-$wallpaperfilename.png
+        cp $blurredwallpaper $generatedversions/blur-$blur-$wallpaperfilename.png
         echo ":: Blurred"
     fi
 fi
-cp $generatedversions/blur-$blur-$effect-$wallpaperfilename.png $blurredwallpaper
+cp $generatedversions/blur-$blur-$wallpaperfilename.png $blurredwallpaper
 
 # -----------------------------------------------------
 # Create rasi file
