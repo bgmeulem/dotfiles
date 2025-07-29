@@ -78,13 +78,13 @@ tooltip {
     border-radius: 16px;
     background-color: black;
     opacity:0.9;
-    padding:15px;
     margin:0px;
 }
 
 tooltip label {
     font-weight: normal;
     color: white;
+    padding: 10px 10px;  /* ← THIS is what actually adds inner spacing */
 }
 
 /* -----------------------------------------------------
