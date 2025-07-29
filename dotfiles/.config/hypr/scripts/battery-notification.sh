@@ -20,5 +20,5 @@ fi
 # Check if battery percentage is below the low threshold when not charging
 if [[ "$BATTERY_CAPACITY" -le "$LOW_THRESHOLD" ]] && [[ "$BATTERY_STATUS" != "Charging" ]]; then
     # Display a low battery notification
-    notify-send "Battery low" "Battery is at ${BATTERY_CAPACITY}%" -u critical -i "battery-caution" && $sDIR/sounds.sh --battery-warning
+    notify-send "Battery low" "Battery is at ${BATTERY_CAPACITY}%" -u critical -i "battery-caution" -h string:x-canonical-private-synchronous:anything && $sDIR/sounds.sh --battery-warning
 fi
