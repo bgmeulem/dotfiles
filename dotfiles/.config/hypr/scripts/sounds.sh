@@ -31,6 +31,16 @@ elif [[ "$1" == "--error" ]]; then
         exit 0
     fi
     soundoption="dialog-error.*"
+elif [[ "$1" == "--battery-warning" ]]; then
+    if [[ "$muteScreenshots" = true ]]; then
+        exit 0
+    fi
+    soundoption="dialog-error.*"
+elif [[ "$1" == "--battery-full" ]]; then
+    if [[ "$muteScreenshots" = true ]]; then
+        exit 0
+    fi
+    soundoption="complete.*"
 else
     echo -e "Available sounds: --screenshot, --volume, --error"
     exit 0
