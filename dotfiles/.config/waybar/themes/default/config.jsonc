@@ -18,7 +18,8 @@
     "tray",
     "bluetooth",
     "pulseaudio",
-    "battery"
+    "battery",
+    "custom/exit",
   ],
   "hyprland/workspaces": {
     "on-click": "activate",

@@ -50,8 +50,6 @@
   "custom/exit": {
     "format": "",
     "on-click": "~/.scripts/wlogout.sh",
-    "on-click-right": "hyprlock",
-    "tooltip-format": "Left: Power menu\nRight: Lock screen"
   },
 
   // SwayNC
