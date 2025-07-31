@@ -14,7 +14,7 @@
 }
 
 window {
-	background: url("../ml4w/cache/blurred_wallpaper.png");
+	background-image: url("/home/bgmeulem/.cache/waypaper/blurred_wallpaper.png");
 	background-size: cover;
 	font-size: 16pt;
 	color: #cdd6f4;
