@@ -17,13 +17,6 @@ if [ $instance_count -gt 1 ]; then
 fi
 
 
-# ----------------------------------------------------- 
-# Define threshholds for color indicators
-# ----------------------------------------------------- 
-
-threshhold_green=0
-threshhold_yellow=25
-threshhold_red=100
 install_platform="$(cat ~/.config/ml4w/settings/platform.sh)"
 
 # Check if platform is supported
@@ -65,18 +58,8 @@ esac
 # Output in JSON format for Waybar Module custom-updates
 # ----------------------------------------------------- 
 
-css_class="green"
-
-if [ "$updates" -gt $threshhold_yellow ]; then
-    css_class="yellow"
-fi
-
-if [ "$updates" -gt $threshhold_red ]; then
-    css_class="red"
-fi
-
-if [ "$updates" -gt $threshhold_green ]; then
-    printf '{"text": "%s", "alt": "%s", "tooltip": "Click to update your system", "class": "%s"}' "$updates" "$updates" "$css_class"
+if [ "$updates" != 0 ]; then
+    printf '{"text": "%s", "alt": "%s", "tooltip": "Click to update", "class": "update-class"}' "$updates" "$updates"
 else
-    printf '{"text": "0", "alt": "0", "tooltip": "No updates available", "class": "green"}'
+    printf '{"tooltip": "No updates available", "class": "update-class"}'
 fi
