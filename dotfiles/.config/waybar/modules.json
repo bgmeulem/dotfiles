@@ -29,7 +29,7 @@
 
   // Updates Count
   "custom/updates": {
-    "format": "  {}",
+    "format": "{}  ",
     "signal": 1,
     "escape": true,
     "return-type": "json",

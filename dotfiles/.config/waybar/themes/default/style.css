@@ -34,6 +34,9 @@
 #custom-updates {
     /* top padding otherwise it -looks- (but isnt)slightly too high */
     padding: 2 0 0 0px;
+    background-color: @backgroundlight;
+    color: @textcolor1;
+    border-radius: 10px;
 }
 
 #custom-updates.update-class {
@@ -141,17 +144,6 @@ window#waybar.empty #window {
     margin-right: 8px;
 }
 
-
-
-/* -----------------------------------------------------
- * Custom Updates
- * ----------------------------------------------------- */
-
-#custom-updates {
-    background-color: @backgroundlight;
-    color: @textcolor1;
-    border-radius: 10px;
-}
 
 #tray menu {
     background-color: #000000;
