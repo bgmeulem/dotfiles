@@ -18,6 +18,7 @@
     "tray",
     "bluetooth",
     "pulseaudio",
+    "idle_inhibitor",
     "battery",
     "custom/exit",
   ],

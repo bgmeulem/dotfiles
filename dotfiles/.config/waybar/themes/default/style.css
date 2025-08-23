@@ -25,10 +25,11 @@
 #pulseaudio,
 #custom-updates,
 #custom-exit,
+#idle_inhibitor,
 #custom-power-menu {
   font-size: 16px;
   min-width: 12px;
-  margin: 0 10px;
+  margin: 0 8px;
 }
 
 #custom-updates {

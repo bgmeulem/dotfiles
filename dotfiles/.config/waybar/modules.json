@@ -84,15 +84,14 @@
    },
 
   // Hypridle inhibitor
- "custom/hypridle": {
-   "format": "",
-   "return-type": "json",
-   "escape": true,
-   "exec-on-event": true,
-   "interval": 60,
-   "exec": "~/.config/hypr/scripts/hypridle.sh status",
-   "on-click": "~/.config/hypr/scripts/hypridle.sh toggle"
- },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    },
+    "timeout": 30.5
+  },
 
   // Keyboard State
    "keyboard-state": {
