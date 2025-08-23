@@ -51,8 +51,8 @@ handle_power_state_change() {
                 # Power just connected
                 if [ -f "$LOW_BATTERY_ID_FILE" ]; then
                     # Replace low battery notification
-                    NOTIFICATION_ID=$(cat "$LOW_BATTERY_ID_FILE")
-                    notify-send --replace-id="$NOTIFICATION_ID" "Power Connected" "Battery charging (${BATTERY_CAPACITY}%)" -i "battery-charging" -t 3000
+                    NOTIFICATION_ID=$(cat "$LOW_BATTERY_ID_FILE");
+                    notify-send --replace-id="$NOTIFICATION_ID" "Power Connected" "Battery charging (${BATTERY_CAPACITY}%)" -i "battery-charging" -t 3000;
                     rm -f "$LOW_BATTERY_ID_FILE"
                 else
                     # Show general power connected notification
@@ -64,16 +64,6 @@ handle_power_state_change() {
                 notify-send "Power Disconnected" "Running on battery (${BATTERY_CAPACITY}%)" -i "battery" -t 3000
                 ;;
         esac
-    fi
-}
-
-# Function to dismiss low battery notifications when power is connected (legacy function for compatibility)
-dismiss_low_battery_notification() {
-    if [ -f "$LOW_BATTERY_ID_FILE" ]; then
-        NOTIFICATION_ID=$(cat "$LOW_BATTERY_ID_FILE")
-        # Replace the low battery notification with a charging notification
-        notify-send --replace-id="$NOTIFICATION_ID" "Power Connected" "Battery charging (${BATTERY_CAPACITY}%)" -i "battery-charging" -t 3000
-        rm -f "$LOW_BATTERY_ID_FILE"
     fi
 }
 
