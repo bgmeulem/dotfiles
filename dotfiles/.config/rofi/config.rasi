@@ -50,9 +50,9 @@ configuration {
 
 // Main //
 window {
-    height:                      20em;
+    height:                      6em;
     // width:                       56em;
-    width:                       35em;
+    width:                       25em;
     transparency:                "real";
     fullscreen:                  false;
     enabled:                     true;
@@ -63,14 +63,14 @@ window {
     // border-color:                @color11;
     border-radius:               @border-radius;
     // background-color:            @background;
-    background-color:		#000000dd;
+    background-color:		#00000088;
 }
 
 mainbox {
     enabled:                     true;
     spacing:                     0em;
     padding:                     0em;
-    orientation:                 vertical;
+    orientation:                 horizontal;
     children:                    [ "inputbar" , "listbox" ];
     background-color:            transparent;
     /* background-image:            @current-image; */
@@ -80,17 +80,17 @@ mainbox {
 // Inputs //
 inputbar {
     enabled:                     true;
+    width:			 15em;
     spacing:                     0em;
-    padding:                     1em;
+    padding:                     1.5em;
     children:                    [ "textbox-prompt-colon", "entry" ];
     background-color:            transparent;
     // background-image:            url("~/.config/ml4w/cache/current_wallpaper", width);
 }
 
 textbox-prompt-colon {
-    enabled:                     true;
+    enabled:                     false;
     expand:                      false;
-    str:                         "  ";
     padding:                     1em 0.2em 0em 0em;
     text-color:                  @foreground;
     border-radius:               2em 0em 0em 2em;
@@ -101,7 +101,6 @@ textbox-prompt-colon {
 
 entry {
     enabled:                     true;
-    border-radius:               0em 2em 2em 0em;
     spacing:                     1em;
     padding:                     1em;
     /* background-color:            @color5; */
@@ -116,7 +115,7 @@ entry {
 listbox {
     padding:                     0em;
     spacing:                     0em;
-    orientation:                 horizontal;
+    orientation:                 vertical;
     // children:                    [ "listview" , "mode-switcher" ];
     children:                    [ "listview"];
     background-color:           transparent;
@@ -127,7 +126,7 @@ listview {
     spacing:                     0.5em;
     enabled:                     true;
     columns:                     1;
-    lines:                       3;
+    lines:                       1;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -168,15 +167,13 @@ button selected {
 element {
     enabled:                     true;
     spacing:                     0em;
-    padding:                     0.5em;
+    padding:                     1em;
     cursor:                      pointer;
     background-color:            transparent;
     text-color:                  @foreground;
 }
 
 element selected.normal {
-    background-color:            @color5;
-    background-color:            #fefefe33;
     text-color:                  @foreground;
     border-radius:               1.5em;
 }
@@ -222,7 +219,7 @@ element alternate.active {
 }
 
 element-icon {
-    size:                        3em;
+    size:                        2em;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
