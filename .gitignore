@@ -1,1 +1,8 @@
 git/.gitconfig
+dotfiles/.config/hypr/colors.conf
+dotfiles/.config/hypr/colors.conf
+dotfiles/.config/kitty/colors.conf
+dotfiles/.config/rofi/colors.rasi
+dotfiles/.config/swaync/colors.css
+dotfiles/.config/waybar/colors.css
+dotfiles/.config/wlogout/colors.css
