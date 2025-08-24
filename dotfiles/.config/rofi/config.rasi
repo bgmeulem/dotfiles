@@ -13,9 +13,7 @@
 configuration {
     // modi:                       "drun,filebrowser,window,run";
     modi:                       "drun";
-    font:                       "Fira Sans 11";
-    show-icons:                 true;
-    icon-theme:                 "kora";
+    icon-theme:                 "Papirus";
     // display-drun:                " ";
     // display-run:                 " ";
     // display-filebrowser:         "  ";
@@ -50,7 +48,7 @@ configuration {
 
 // Main //
 window {
-    height:                      6em;
+    height:                      4em;
     // width:                       56em;
     width:                       25em;
     transparency:                "real";
@@ -80,29 +78,31 @@ mainbox {
 // Inputs //
 inputbar {
     enabled:                     true;
-    width:			 15em;
+    width:			 12em;
     spacing:                     0em;
-    padding:                     1.5em;
-    children:                    [ "textbox-prompt-colon", "entry" ];
+    padding:                     0em 0em 0em 1em;
+    // children:                    [ "textbox-prompt-colon", "entry" ];
+    children:                    [ "entry" ];
     background-color:            transparent;
     // background-image:            url("~/.config/ml4w/cache/current_wallpaper", width);
 }
 
-textbox-prompt-colon {
-    enabled:                     false;
-    expand:                      false;
-    padding:                     1em 0.2em 0em 0em;
-    text-color:                  @foreground;
-    border-radius:               2em 0em 0em 2em;
+// textbox-prompt-colon {
+    // enabled:                     false;
+    // expand:                      false;
+    // padding:                     1em 0.2em 0em 0em;
+    // text-color:                  @foreground;
+    // border-radius:               2em 0em 0em 2em;
     // background-color:            @color5;
-    background-color:            transparent;
+    // background-color:            transparent;
     // background-image:            url("~/.config/ml4w/cache/current_wallpaper", width);
-}
+// }
 
 entry {
     enabled:                     true;
-    spacing:                     1em;
     padding:                     1em;
+    spacing:                     0.5em;
+    vertical-align:		 0.5;
     /* background-color:            @color5; */
     background-color:            transparent;
     text-color:                  @foreground;
@@ -113,8 +113,6 @@ entry {
 
 // Lists //
 listbox {
-    padding:                     0em;
-    spacing:                     0em;
     orientation:                 vertical;
     // children:                    [ "listview" , "mode-switcher" ];
     children:                    [ "listview"];
@@ -122,18 +120,15 @@ listbox {
 }
 
 listview {
-    padding:                     1em;
-    spacing:                     0.5em;
     enabled:                     true;
     columns:                     1;
     lines:                       1;
     cycle:                       true;
-    dynamic:                     true;
+    dynamic:                     false;
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
+    fixed-columns:               false;
     cursor:                      "default";
     background-color:            transparent;
     text-color:                  @foreground;
@@ -141,26 +136,26 @@ listview {
 
 
 // Modes //
-mode-switcher {
-    orientation:                 vertical;
-    width:                       6.6em;
-    enabled:                     true;
-    padding:                     1.5em;
-    spacing:                     1.5em;
-    background-color:            transparent;
-}
-
-button {
-    cursor:                      pointer;
-    border-radius:               2em;
-    background-color:            @background;
-    text-color:                  @foreground;
-}
-
-button selected {
-    background-color:            @color5;
-    text-color:                  @foreground;
-}
+// mode-switcher {
+//     orientation:                 vertical;
+//     width:                       6.6em;
+//     enabled:                     true;
+//     padding:                     1.5em;
+//     spacing:                     1.5em;
+//     background-color:            transparent;
+// }
+// 
+// button {
+//     cursor:                      pointer;
+//     border-radius:               2em;
+//     background-color:            @background;
+//     text-color:                  @foreground;
+// }
+// 
+// button selected {
+//     background-color:            @color5;
+//     text-color:                  @foreground;
+// }
 
 
 // Elements //
@@ -170,11 +165,12 @@ element {
     padding:                     1em;
     cursor:                      pointer;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @secondary;
+    children: [ "element-text", "element-icon" ];
 }
 
 element selected.normal {
-    text-color:                  @foreground;
+    text-color:                  @outline;
     border-radius:               1.5em;
 }
 
@@ -219,16 +215,18 @@ element alternate.active {
 }
 
 element-icon {
+    horizontal-align:            0.9;
     size:                        2em;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
     border-radius:               0em;
+    padding:			 0em 0.2em 0em 0em;
 }
 
 element-text {
     vertical-align:              0.5;
-    horizontal-align:            0.1;
+    horizontal-align:            0.9;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
