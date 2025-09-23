@@ -1,18 +1,11 @@
 #!/usr/bin/env bash
 
-sDIR="$HOME/.config/hypr/scripts"
-
+SOUND_DIR="$HOME/.config/hypr/scripts"
 ADAPTER="/sys/class/power_supply/ACAD"
-
-# Battery thresholds for notifications (change as needed)
 LOW_THRESHOLD=15
 FULL_THRESHOLD=97
-
-# Notification ID files for persistent notification management
 BATTERY_ID_FILE="/tmp/battery_notification_id"
 POWER_STATE_FILE="/tmp/battery_power_state"
-
-# Get current battery percentage and status using /sys/class/power_supply
 BATTERY_STATUS=$(cat /sys/class/power_supply/BAT1/status)
 BATTERY_CAPACITY=$(cat /sys/class/power_supply/BAT1/capacity)
 
@@ -62,7 +55,7 @@ handle_power_state_change() {
                 notify-send "Power Disconnected" "Running on battery (${BATTERY_CAPACITY}%)" -i "battery-0${ROUNDED_BC}" -t 3000
                 ;;
         esac
-        $sDIR/sounds.sh --battery-warning
+        $SOUND_DIR/sounds.sh --battery-warning
     fi
 }
 
@@ -74,7 +67,7 @@ handle_full_charge () {
             # Display a notification for full battery
             NOTIFICATION_ID=$(notify-send "Battery Full" -u critical -i "battery-full" --print-id)
             echo "$NOTIFICATION_ID" > "$FULL_BATTERY_ID_FILE"
-            $sDIR/sounds.sh --battery-full
+            $SOUND_DIR/sounds.sh --battery-full
         fi
     else
         # Remove full battery notification file if battery is no longer full
@@ -90,7 +83,7 @@ handle_low_battery() {
             # Display a low battery notification and store its ID
             NOTIFICATION_ID=$(notify-send "Battery low" "Battery is at ${BATTERY_CAPACITY}%" -u critical -i "battery-caution" -h string:x-canonical-private-synchronous:anything --print-id)
             echo "$NOTIFICATION_ID" > "$BATTERY_ID_FILE"
-            $sDIR/sounds.sh --battery-warning
+            $SOUND_DIR/sounds.sh --battery-warning
         fi
     else
         # If battery is above threshold or charging, just remove notification ID file
