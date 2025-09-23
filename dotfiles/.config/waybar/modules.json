@@ -90,7 +90,7 @@
       "activated": "",
       "deactivated": ""
     },
-    "timeout": 30.5
+    "timeout": 180
   },
 
   // Keyboard State
