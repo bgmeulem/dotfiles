@@ -1,0 +1,7 @@
+[Unit]
+Description=Battery Status Check
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/bgmeulem/.config/hypr/scripts/battery-notification.sh
