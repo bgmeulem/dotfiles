@@ -1,9 +1,12 @@
-/* Colors */
+/* CSS for sway notification center and notifications
+* Reload with: swaync-client -rs */
 
+/* Colors */
 @import 'colors.css';
 @define-color background @blur_background8;
 @define-color hover @surface;
 
+/* General */
 * {
     font-family: "Fira Sans Semibold";
     transition: 100;
@@ -13,19 +16,7 @@
   background: transparent;  
 }
 
-
-/* Control Center */
-
-.control-center {
-  border: none;
-  background: @background;
-  margin: 18px;
-  padding: 12px;
-}
-
-
 /* Notifications  */
-
 .notification {
     border: none;
     border-radius: 10px;
@@ -33,24 +24,41 @@
     opacity: 0.8;
     background: black;
 }
+.notification-default-action:hover,
+.notification-action:hover {
+  /* This does not fill the entire card of the notification, just the "inside"? uncertain how to fill all */
+  opacity: 0.7;
+  background: black;
+  transition: 50ms;
+}
 
+/* Buttons */
+button {
+  border: 0px;
+  background: black;
+  opacity: 0.7;
+}
 
+button:hover {
+  border: 0px;
+  background: none;
+  opacity: 1;
+  transition: 50ms;
+}
+
+/* Control center */
+.control-center {
+  border: none;
+  background: @background;
+  margin: 18px;
+  padding: 12px;
+}
 .control-center .control-center-list > *{
   /* List of notifications */
   /* some class in here has an odd default background
 * can't figure out which one, hence the * selector */
   background: none;
 }
-
-
-.notification-default-action:hover,
-.notification-action:hover {
-    /* This does not fill the entire card of the notification, just the "inside"? uncertain how to fill all */
-    opacity: 0.5;
-    background: black;
-    transition: 50ms;
-}
-
 
 .control-center .notification-row .notification-background .notification > *:last-child > * {
   min-height: 3.4em;
@@ -73,10 +81,7 @@
   padding: 4px;
 }
 
-button {
-  /* Buttons on the notificatoin itself */
-    border: 0px;
-}
+
 /* Notifications expanded-group */
 
 .notification-group {
