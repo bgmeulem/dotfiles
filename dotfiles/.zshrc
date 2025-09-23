@@ -8,3 +8,5 @@ for f in ~/.config/zshrc/*; do
         [[ -f $c ]] && source $c || source $f
     fi
 done
+
+. "$HOME/.local/share/../bin/env"
