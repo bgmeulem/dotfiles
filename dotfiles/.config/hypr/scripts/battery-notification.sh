@@ -5,7 +5,7 @@ sDIR="$HOME/.config/hypr/scripts"
 ADAPTER="/sys/class/power_supply/ACAD"
 
 # Battery thresholds for notifications (change as needed)
-LOW_THRESHOLD=40
+LOW_THRESHOLD=15
 FULL_THRESHOLD=97
 
 # Notification ID files for persistent notification management
@@ -16,7 +16,6 @@ POWER_STATE_FILE="/tmp/battery_power_state"
 BATTERY_STATUS=$(cat /sys/class/power_supply/BAT1/status)
 BATTERY_CAPACITY=$(cat /sys/class/power_supply/BAT1/capacity)
 
-# Function to check if AC power is connected
 is_power_connected() {
     if [ -f "$ADAPTER/online" ] && [ "$(cat $ADAPTER/online)" = "1" ]; then
         return 0  # Power connected
@@ -24,7 +23,6 @@ is_power_connected() {
     return 1  # No power connected
 }
 
-# Function to check and handle power state changes
 handle_power_state_change() {
     local current_power_state
     local previous_power_state=""
@@ -99,6 +97,7 @@ handle_low_battery() {
         rm -f "$BATTERY_ID_FILE"
     fi
 }
+
 # Check for power state changes and handle notifications
 handle_power_state_change
 handle_full_charge
