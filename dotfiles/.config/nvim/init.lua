@@ -225,8 +225,6 @@ require('lazy').setup({
           -- or a suggestion from your LSP for this to activate.
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
 
-          -- WARN: This is not Goto Definition, this is Goto Declaration.
-          --  For example, in C this would take you to the header.
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
           -- The following two autocommands are used to highlight references of the
@@ -447,27 +445,15 @@ require('lazy').setup({
     end,
   },
 
-  { -- colorscheme
-    'folke/tokyonight.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    opts = {
-      on_colors = function(colors)
-        colors.bg_dark = '#1a2327'
-        colors.bg = '#1a2327'
-        colors.text = '#fefaee'
-      end,
-      on_highlights = function(highlights, colors)
-        highlights.Folded = {
-          bg = '#222538',
-          fg = colors.comment,
-        }
-      end,
-    },
-    init = function()
-      vim.cmd.colorscheme 'tokyonight-night'
-      -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
-    end,
+  {
+    'catppuccin/nvim',
+    priority = 1000,
+    config = function()
+      require('catppuccin').setup({
+        transparent_background = true,
+      })
+      vim.cmd.colorscheme 'catppuccin'
+    end
   },
 
   { -- comment highlights
