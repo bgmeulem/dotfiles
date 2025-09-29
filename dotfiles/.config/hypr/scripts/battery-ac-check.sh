@@ -2,11 +2,8 @@
 
 SOUND_DIR="$HOME/.config/hypr/scripts"
 ADAPTER="/sys/class/power_supply/ACAD"
-LOW_THRESHOLD=15
-FULL_THRESHOLD=97
-BATTERY_ID_FILE="/tmp/battery_notification_id"
+NOTIFICATION_ID_FILE="/tmp/battery_notification_id"
 POWER_STATE_FILE="/tmp/battery_power_state"
-BATTERY_STATUS=$(cat /sys/class/power_supply/BAT1/status)
 BATTERY_CAPACITY=$(cat /sys/class/power_supply/BAT1/capacity)
 
 is_power_connected() {
@@ -40,11 +37,11 @@ handle_power_state_change() {
         case "$current_power_state" in
             "connected")
                 # Power just connected
-                if [ -f "$BATTERY_ID_FILE" ]; then
+                if [ -f "$NOTIFICATION_ID_FILE" ]; then
                     # Replace low battery notification
-                    NOTIFICATION_ID=$(cat "$BATTERY_ID_FILE");
+                    NOTIFICATION_ID=$(cat "$NOTIFICATION_ID_FILE");
                     notify-send --replace-id="$NOTIFICATION_ID" "Power Connected" "Battery charging (${BATTERY_CAPACITY}%)" -i "battery-0${ROUNDED_BC}-charging" -t 3000;
-                    rm -f "$BATTERY_ID_FILE"
+                    rm -f "$NOTIFICATION_ID_FILE"
                 else
                     # Show general power connected notification
                     notify-send "Power Connected" "Battery charging (${BATTERY_CAPACITY}%)" -i "battery-0${ROUNDED_BC}-charging" -t 3000
@@ -59,39 +56,4 @@ handle_power_state_change() {
     fi
 }
 
-handle_full_charge () {
-    # Check if battery is fully charged
-    if [ "$BATTERY_STATUS" == "Full" ] || [ "$BATTERY_CAPACITY" -gt "$FULL_THRESHOLD" ]; then
-        # Only show full battery notification once (avoid spam)
-        if [ ! -f "$FULL_BATTERY_ID_FILE" ]; then
-            # Display a notification for full battery
-            NOTIFICATION_ID=$(notify-send "Battery Full" -u critical -i "battery-full" --print-id)
-            echo "$NOTIFICATION_ID" > "$FULL_BATTERY_ID_FILE"
-            $SOUND_DIR/sounds.sh --battery-full
-        fi
-    else
-        # Remove full battery notification file if battery is no longer full
-        rm -f "$FULL_BATTERY_ID_FILE"
-    fi
-}
-
-handle_low_battery() {
-    # Handle low battery notifications
-    if [[ "$BATTERY_CAPACITY" -le "$LOW_THRESHOLD" ]] && [[ "$BATTERY_STATUS" != "Charging" ]]; then
-        # Only show low battery notification if power is NOT connected
-        if ! is_power_connected; then
-            # Display a low battery notification and store its ID
-            NOTIFICATION_ID=$(notify-send "Battery low" "Battery is at ${BATTERY_CAPACITY}%" -u critical -i "battery-caution" -h string:x-canonical-private-synchronous:anything --print-id)
-            echo "$NOTIFICATION_ID" > "$BATTERY_ID_FILE"
-            $SOUND_DIR/sounds.sh --battery-warning
-        fi
-    else
-        # If battery is above threshold or charging, just remove notification ID file
-        rm -f "$BATTERY_ID_FILE"
-    fi
-}
-
-# Check for power state changes and handle notifications
 handle_power_state_change
-handle_full_charge
-handle_low_battery
