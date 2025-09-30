@@ -26,6 +26,11 @@ input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/colors.conf'
 # post_hook = "kitty @ set-colors -a -c ~/.config/kitty/colors.conf"
 
+[templates.foot]
+input_path = '~/.config/matugen/templates/foot-colors.ini'
+output_path = '~/.config/foot/colors.ini'
+# post_hook = "kitty @ set-colors -a -c ~/.config/kitty/colors.conf"
+
 [templates.swaync]
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/swaync/colors.css'
