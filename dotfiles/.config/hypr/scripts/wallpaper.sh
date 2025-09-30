@@ -1,17 +1,5 @@
 #!/bin/bash
 # -----------------------------------------------------
-# Check to use wallpaper cache
-# -----------------------------------------------------
-
-if [ -f ~/.config/ml4w/settings/wallpaper_cache ]; then
-    use_cache=1
-    echo ":: Using Wallpaper Cache"
-else
-    use_cache=0
-    echo ":: Wallpaper Cache disabled"
-fi
-
-# -----------------------------------------------------
 # Set defaults
 # -----------------------------------------------------
 
@@ -75,21 +63,6 @@ echo ":: Wallpaper Filename: $wallpaperfilename"
 
 echo ":: Execute matugen with $used_wallpaper"
 $HOME/.cargo/bin/matugen image $used_wallpaper -m "dark"
-
-
-# -----------------------------------------------------
-# Update Pywalfox
-# -----------------------------------------------------
-
-if type pywalfox >/dev/null 2>&1; then
-    pywalfox update
-fi
-
-# -----------------------------------------------------
-# Update SwayNC
-# -----------------------------------------------------
-sleep 0.1
-swaync-client -rs
 
 # -----------------------------------------------------
 # Created blurred wallpaper
