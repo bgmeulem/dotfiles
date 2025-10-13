@@ -36,7 +36,7 @@
     "exec": "~/.scripts/updates.sh",
     "interval": 1800,
     "on-click": "~/.config/hypr/scripts/installupdates_wrapper.sh",
-    "on-click-right": "~/.config/scripts/software_wrapper.sh"
+    "on-click-right": "~/.config/hypr/scripts/software_wrapper.sh"
   },
 
   // Wallpaper
