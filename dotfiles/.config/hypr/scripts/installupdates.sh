@@ -14,7 +14,7 @@ _isInstalled() {
     return
 }
 
-aur_helper="$(cat ~/.config/ml4w/settings/aur.sh)"
+aur_helper="yay"
 
 if [[ $(_isInstalled "timeshift") == "0" ]]; then
     echo
