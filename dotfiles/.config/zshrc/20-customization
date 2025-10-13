@@ -25,6 +25,13 @@ plugins=(
 )
 
 # Set-up oh-my-zsh
+# Speed up compinit by caching it
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 source $ZSH/oh-my-zsh.sh
 
 # -----------------------------------------------------
