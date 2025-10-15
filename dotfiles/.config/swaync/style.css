@@ -4,12 +4,18 @@
 /* Colors */
 @import 'colors.css';
 @import '../my_colors.css'
+@define-color text #000000;
 
 /* General */
 * {
-    font-family: "Fira Sans Semibold";
-    transition: 100;
-    padding: 0;
+  all: unset;
+  transition: 100;
+  color: #000000;
+}
+
+:root {
+  /* syntax: color x-offset y-offset blur spread*/
+  --notification-shadow: rgba(99, 99, 99, .8) 0px 2px 2px 1px;
 }
 
 /* Notifications  */
@@ -17,14 +23,14 @@
     border: none;
     border-radius: 10px;
     opacity: 0.8;
-    color: #000000;
-    padding: 10;
+    padding: 0.5em;
 }
 
 .notification-background .notification {
   border-radius: 10px;
   background: #F2F1ED;
-  padding: 0.5em 1em;
+  padding: 0.8em 0.5em;
+  box-shadow: var(--notification-shadow);
 }
 
 .notification *:hover {
@@ -35,9 +41,16 @@
   background: #E5E3DC;
 }
 
-.notification-content .body,
+
+.notification-content .body {
+  font-family: "Fira Sans";
+}
+
 .notification-content .summary {
-    color: #000000;
+  font-family: "Fira Sans Semibold";
+}
+.notification-content .image {
+  margin-right: 0.5em;
 }
 
 .close-button {
@@ -45,6 +58,10 @@
   background: none;
   color: #000000;
   box-shadow: none;
+  margin: 0.4em;
+  size: 14px;
+  min-width: 24px;
+  min-height: 24px
 }
 
 .close-button:hover {

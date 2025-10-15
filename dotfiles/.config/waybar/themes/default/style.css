@@ -1,19 +1,12 @@
-/* -----------------------------------------------------
- * Import Pywal colors
- * ----------------------------------------------------- */
 @import '../../../my_colors.css';
-
-/* -----------------------------------------------------
- * General
- * ----------------------------------------------------- */
-
-
+@import '../../colors.css';
 * {
+    all: unset;
     font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     border: none;
     border-radius: 0px;
     min-height: 0;
-    color: @soft_white;
+    color: @soft-black;
 }
 
 
@@ -30,7 +23,7 @@
 #custom-power-menu {
   font-size: 16px;
   min-width: 12px;
-  margin: 0 8px;
+  margin: 0 10px;
 }
 
 #custom-updates {
@@ -58,18 +51,18 @@
 
 #workspaces button {
   all: initial;
-    margin: 9px 3px;
-    font-size: 0px;
-    border-radius: 6px;
-    border: 0px;
-    min-width: 12px;
-    background-color: @workspacesbackground2;
-    transition: all 0.3s ease-in-out;
-    opacity: 0.3;
+  margin: 9px 3px;
+  font-size: 0px;
+  border-radius: 6px;
+  border: 0px;
+  min-width: 12px;
+  background-color: @soft-white;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.3;
 }
 
 #workspaces button.active {
-    background: @soft_white;
+    background: @soft-white;
     border-radius: 6px;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
@@ -89,7 +82,7 @@
 
 tooltip {
     border-radius: 16px;
-    background-color: @soft_white;
+    background-color: @soft-white;
     opacity:0.9;
     margin:0px;
 }
@@ -107,14 +100,13 @@ tooltip label {
 #window {
     background: transparent;
     border-radius: 12px;
-    color:@textcolor1;
     font-size:16px;
     font-weight:normal;
     opacity:0.8;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.06);
+    background-color: @soft-white-02;
 }
 /* -----------------------------------------------------
  * Modules
@@ -134,24 +126,20 @@ window#waybar {
 }
 
 #tray menu {
-    background-color: @soft_white;
+    background-color: @soft-white;
     opacity: 0.8;
     border-radius: 0.5em;
     border: none;
+    padding: 0.5em 0em;
 }
 
 #tray menu menuitem {
     opacity: 1;
-    color: #222222;
+    padding: 0.4em 1em;
 }
 
 #tray menu menuitem:hover {
     background-color: #cccccc;
-}
-
-#tray * {
-    color: #222222;
-    padding-left: 0;
 }
 
 window#waybar menu {
