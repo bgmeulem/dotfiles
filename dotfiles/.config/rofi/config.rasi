@@ -1,15 +1,3 @@
-/*
-#  ____        __ _  
-# |  _ \ ___  / _(_) 
-# | |_) / _ \| |_| | 
-# |  _ < (_) |  _| | 
-# |_| \_\___/|_| |_| 
-#                    
-# by Stephan Raabe (2023) 
-# ----------------------------------------------------- 
-*/
-
-/* ---- Configuration ---- */
 configuration {
     // modi:                       "drun,filebrowser,window,run";
     modi:                       "drun";
@@ -27,29 +15,24 @@ configuration {
     
 }
 
-/* ---- Load font ---- */
 @import "~/.config/rofi/font.rasi"
-
-/* ---- Load colors ---- */
 @theme "~/.config/rofi/colors.rasi"
-
-/* ---- Load border width ---- */
 @import "~/.config/rofi/border.rasi"
-
-/* ---- Load border radius ---- */
 @import "~/.config/rofi/border-radius.rasi"
+@import "~/.config/my_colors.rasi"
 
 /* ---- Map colors ---- */
 * {
     color11: @primary;
     color5: @on-primary-fixed;
     foreground: @on-surface;
+    text: @soft-black;
+    background: @soft-white-08;
 }
 
 // Main //
 window {
     height:                      4em;
-    // width:                       56em;
     width:                       25em;
     transparency:                "real";
     fullscreen:                  false;
@@ -57,11 +40,8 @@ window {
     cursor:                      "default";
     spacing:                     0em;
     padding:                     0em;
-    // border:                      @border-width;
-    // border-color:                @color11;
     border-radius:               @border-radius;
-    // background-color:            @background;
-    background-color:		#00000088;
+    background-color:		 @background;
 }
 
 mainbox {
@@ -71,7 +51,6 @@ mainbox {
     orientation:                 horizontal;
     children:                    [ "inputbar" , "listbox" ];
     background-color:            transparent;
-    /* background-image:            @current-image; */
 }
 
 
@@ -81,22 +60,10 @@ inputbar {
     width:			 12em;
     spacing:                     0em;
     padding:                     0em 0em 0em 1em;
-    // children:                    [ "textbox-prompt-colon", "entry" ];
     children:                    [ "entry" ];
     background-color:            transparent;
-    // background-image:            url("~/.config/ml4w/cache/current_wallpaper", width);
 }
 
-// textbox-prompt-colon {
-    // enabled:                     false;
-    // expand:                      false;
-    // padding:                     1em 0.2em 0em 0em;
-    // text-color:                  @foreground;
-    // border-radius:               2em 0em 0em 2em;
-    // background-color:            @color5;
-    // background-color:            transparent;
-    // background-image:            url("~/.config/ml4w/cache/current_wallpaper", width);
-// }
 
 entry {
     enabled:                     true;
@@ -105,7 +72,7 @@ entry {
     vertical-align:		 0.5;
     /* background-color:            @color5; */
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @text;
     cursor:                      text;
     placeholder:                 "Search";
     placeholder-color:           inherit;
@@ -114,7 +81,6 @@ entry {
 // Lists //
 listbox {
     orientation:                 vertical;
-    // children:                    [ "listview" , "mode-switcher" ];
     children:                    [ "listview"];
     background-color:           transparent;
 }
@@ -133,30 +99,6 @@ listview {
     background-color:            transparent;
     text-color:                  @foreground;
 }
-
-
-// Modes //
-// mode-switcher {
-//     orientation:                 vertical;
-//     width:                       6.6em;
-//     enabled:                     true;
-//     padding:                     1.5em;
-//     spacing:                     1.5em;
-//     background-color:            transparent;
-// }
-// 
-// button {
-//     cursor:                      pointer;
-//     border-radius:               2em;
-//     background-color:            @background;
-//     text-color:                  @foreground;
-// }
-// 
-// button selected {
-//     background-color:            @color5;
-//     text-color:                  @foreground;
-// }
-
 
 // Elements //
 element {
@@ -232,7 +174,6 @@ element-text {
     text-color:                  inherit;
 }
 
-// Error message //
 error-message {
     text-color:                  @foreground;
     background-color:            @background;
