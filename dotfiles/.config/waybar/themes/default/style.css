@@ -62,7 +62,7 @@
 }
 
 #workspaces button.active {
-    background: @soft-white;
+    background: @blur_background8;
     border-radius: 6px;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
@@ -106,7 +106,7 @@ tooltip label {
 }
 
 window#waybar {
-    background-color: @soft-white-02;
+    background-color: @soft-white-04;
 }
 /* -----------------------------------------------------
  * Modules
