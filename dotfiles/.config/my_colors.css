@@ -1,1 +1,6 @@
-@define-color soft_white #F2F1ED;
+@define-color  soft-white #F2F1ED;
+@define-color  soft-white-08 rgba(237, 238, 227, 0.8);
+@define-color  soft-white-04 rgba(237, 238, 227, 0.4);
+@define-color  soft-white-02 rgba(237, 238, 227, 0.2);
+@define-color  soft-white2 #E5E3DC;
+@define-color  soft-black #222222;

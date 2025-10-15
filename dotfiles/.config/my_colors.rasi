@@ -1,0 +1,6 @@
+* {
+  soft-white: #F2F1ED;
+  soft-white-08: rgba(237, 238, 227, 0.8);
+  soft-white2: #E5E3DC;
+  soft-black: #222222;
+}
