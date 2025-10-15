@@ -9,12 +9,7 @@ configuration {
 
 /* ---- Load colors ---- */
 @theme "~/.config/rofi/colors.rasi"
-
-/* ---- Load border width ---- */
-@import "~/.config/ml4w/settings/rofi-border.rasi"
-
-/* ---- Load border radius ---- */
-@import "~/.config/ml4w/settings/rofi-border-radius.rasi"
+@theme "~/.config/my_colors.rasi"
 
 /* ---- Map colors ---- */
 * {
@@ -33,9 +28,8 @@ window {
     spacing:                      0em;
     padding:                      0em;
     margin:                       0em; 
-    color:			  #FFFFFF;
-    border:                       @border-width;
-    border-color:                 @color11;
+    color:			  @soft-black;
+    border:                       none;
     cursor:                       "default";
     transparency:                 "real";
     location:                     center;
@@ -61,7 +55,7 @@ listbox {
     spacing:                     0em;
     orientation:                 vertical;
     children:                    [ "listview" ];
-    background-color:            @background;
+    background-color:            @soft-white-08;
 }
 
 listview {
