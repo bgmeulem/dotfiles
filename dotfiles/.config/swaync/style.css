@@ -3,172 +3,50 @@
 
 /* Colors */
 @import 'colors.css';
-@define-color background @blur_background8;
-@define-color hover @surface;
+@import '../my_colors.css'
 
 /* General */
 * {
     font-family: "Fira Sans Semibold";
     transition: 100;
-}
-/* Avoid 'annoying' backgroud */
-.blank-window {  
-  background: transparent;  
+    padding: 0;
 }
 
 /* Notifications  */
-.notification {
+.notification-background {
     border: none;
     border-radius: 10px;
-    padding:10px;
     opacity: 0.8;
-    background: black;
-}
-.notification-default-action:hover,
-.notification-action:hover {
-  /* This does not fill the entire card of the notification, just the "inside"? uncertain how to fill all */
-  opacity: 0.7;
-  background: black;
-  transition: 50ms;
+    color: #000000;
+    padding: 10;
 }
 
-/* Buttons */
-button {
-  border: 0px;
-  background: black;
-  opacity: 0.7;
+.notification-background .notification {
+  border-radius: 10px;
+  background: #F2F1ED;
+  padding: 0.5em 1em;
 }
 
-button:hover {
-  border: 0px;
+.notification *:hover {
+    background: none;
+}
+
+.notification:hover {
+  background: #E5E3DC;
+}
+
+.notification-content .body,
+.notification-content .summary {
+    color: #000000;
+}
+
+.close-button {
+  /* The notification Close Button */
   background: none;
-  opacity: 1;
-  transition: 50ms;
+  color: #000000;
+  box-shadow: none;
 }
 
-/* Control center */
-.control-center {
-  border: none;
-  background: @background;
-  margin: 18px;
-  padding: 12px;
-}
-.control-center .control-center-list > *{
-  /* List of notifications */
-  /* some class in here has an odd default background
-* can't figure out which one, hence the * selector */
-  background: none;
-}
-
-.control-center .notification-row .notification-background .notification > *:last-child > * {
-  min-height: 3.4em;
-}
-
-.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action {
-  background: alpha(@selected, .6);
-  color: @text;
-  border-radius: 12px;
-  margin: 6px;
-}
-
-/* Buttons */
-
-.control-center .notification-row .notification-background .close-button {
-  background: transparent;
-  border-radius: 6px;
-  color: @text;
-  margin: 0px;
-  padding: 4px;
-}
-
-
-/* Notifications expanded-group */
-
-.notification-group {
-  margin: 2px 8px 2px 8px;
-}
-
-.notification-group-header {
-    font-size: 14px;
-  transition: none !important;
-}
-.notification-group-headers {
-  font-size: 14px;
-  color: @text;
-  letter-spacing: 2px;
-}
-
-.notification-group-icon {
-  color: @text;
-}
-
-.notification-group-collapse-button,
-.notification-group-close-all-button {
-  background: transparent;
-  color: @text;
-  margin: 4px; 
-  border-radius: 6px;
-  padding: 4px;
-}
-
-.notification-group-collapse-button:hover,
-.notification-group-close-all-button:hover {
-  background: @hover;
-}  
-
-/* Notification clear button */
-.widget-title {
-  font-size: 1.2em;
-  margin: 6px;
-}
-.widget-title button {
-  background: @background-alt;
-  border-radius: 6px;
-  padding: 4px 16px;
-}
-
-.widget-title button:hover {
-  background-color: @hover;
-}
-
-.widget-title button:active {
-  background-color: @selected;
-}
-
-  /* Buttons menu */
-.widget-buttons-grid {
-  font-size: x-large;
-  padding: 2px 2px;
-  margin: 2px;
-  border-radius: 12px;
-  background: @background-alt;
-}
-
-.widget-buttons-grid>flowbox>flowboxchild>button {
-  margin: 4px 4px;
-  padding: 6px 12px;
-  background: transparent;
-  border-radius: 8px;
-}
-
-.widget-buttons-grid>flowbox>flowboxchild:hover {
-  background: transparent;
-}
-
-.widget-buttons-grid>flowbox>flowboxchild>button:hover {
-  background: @hover;
-}
-
-/* Force left alignment for widget containers */
-.widget-buttons-grid,
-.widget-title,
-.widget-dnd,
-.widget-notifications {
-  /* Container alignment */
-  justify-content: flex-start;
-  align-items: flex-start;
-  text-align: left;
-  /* Optional spacing cleanup */
-  margin-left: 0;
-  padding-left: 0;
+.close-button:hover {
+  background: #E5E3DC;
 }
