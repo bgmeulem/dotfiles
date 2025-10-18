@@ -5,6 +5,7 @@ ADAPTER="/sys/class/power_supply/ACAD"
 LOW_THRESHOLD=15
 FULL_THRESHOLD=96
 BATTERY_ID_FILE="/tmp/battery_notification_id"
+FULL_BATTERY_ID_FILE="/tmp/full_battery_notification_id"
 BATTERY_STATUS=$(cat /sys/class/power_supply/BAT1/status)
 BATTERY_CAPACITY=$(cat /sys/class/power_supply/BAT1/capacity)
 
