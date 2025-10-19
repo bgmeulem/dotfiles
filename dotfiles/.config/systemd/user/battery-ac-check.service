@@ -3,5 +3,5 @@ Description=Battery AC Status Check
 
 [Service]
 Type=oneshot
-ExecStart=%h/.config/hypr/scripts/battery-ac-check.sh
+ExecStart=%h/.config/scripts/battery-ac-check.sh
 Environment=DISPLAY=:0

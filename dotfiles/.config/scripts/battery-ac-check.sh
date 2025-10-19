@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SOUND_DIR="$HOME/.config/hypr/scripts"
+SOUND_DIR="$HOME/.config/scripts"
 ADAPTER="/sys/class/power_supply/ACAD"
 NOTIFICATION_ID_FILE="/tmp/battery_notification_id"
 POWER_STATE_FILE="/tmp/battery_power_state"

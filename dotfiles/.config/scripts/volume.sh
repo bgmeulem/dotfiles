@@ -3,7 +3,7 @@
 # Scripts for volume controls for audio and mic 
 
 iDIR="$HOME/.config/swaync/icons"
-sDIR="$HOME/.config/hypr/scripts"
+sDIR="$HOME/.config/scripts"
 
 # Get Volume
 get_volume() {
