@@ -44,6 +44,7 @@
 
 .notification-content .body {
   font-family: "Fira Sans";
+  filter: blur(6px);
 }
 
 .notification-content .summary {
