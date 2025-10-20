@@ -1,0 +1,6 @@
+[Unit]
+Description=Reload Mango Window Manager
+
+[Service]
+Type=oneshot
+ExecStart=mmsg -d reload_config
