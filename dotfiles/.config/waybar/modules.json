@@ -16,7 +16,12 @@
             "*": 2
     }
   },
-
+  // non-hyprland workspaces
+  "ext/workspaces": {
+    "num-tags": 9,
+    "hide-vacant": true,
+    "on-click": "activate",
+  },
 
   // Cliphist
    "custom/cliphist": {
