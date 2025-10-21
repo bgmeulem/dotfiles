@@ -82,14 +82,13 @@
 
 tooltip {
     border-radius: 16px;
-    background-color: @soft-white;
     opacity:0.9;
     margin:0px;
+    background: @soft-white-08;
 }
 
 tooltip label {
     font-weight: normal;
-    color: black;
     padding: 5px 5px;  /* ← THIS is what actually adds inner spacing */
 }
 
@@ -127,7 +126,7 @@ window#waybar {
 
 #tray menu {
     background-color: @soft-white;
-    opacity: 0.8;
+    opacity: 0.9;
     border-radius: 0.5em;
     border: none;
     padding: 0.5em 0em;
