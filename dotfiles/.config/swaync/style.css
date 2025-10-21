@@ -30,7 +30,6 @@
   border-radius: 10px;
   background: #F2F1ED;
   padding: 0.8em 0.5em;
-  box-shadow: var(--notification-shadow);
 }
 
 .notification *:hover {
@@ -44,7 +43,6 @@
 
 .notification-content .body {
   font-family: "Fira Sans";
-  filter: blur(6px);
 }
 
 .notification-content .summary {
