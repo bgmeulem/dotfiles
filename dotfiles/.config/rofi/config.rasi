@@ -17,8 +17,6 @@ configuration {
 
 @import "~/.config/rofi/font.rasi"
 @theme "~/.config/rofi/colors.rasi"
-@import "~/.config/rofi/border.rasi"
-@import "~/.config/rofi/border-radius.rasi"
 @import "~/.config/my_colors.rasi"
 
 /* ---- Map colors ---- */
@@ -40,8 +38,12 @@ window {
     cursor:                      "default";
     spacing:                     0em;
     padding:                     0em;
-    border-radius:               @border-radius;
     background-color:		 @background;
+    /* Make sure this is consistent with the layer radius of your WM
+    Otherwise, layers look weird*/
+    border-radius: 20px;
+    border: 1px;
+    border-color: @soft-white;
 }
 
 mainbox {
@@ -104,17 +106,18 @@ listview {
 element {
     enabled:                     true;
     spacing:                     0em;
-    padding:                     1em;
+    padding:                     0.9em;
     cursor:                      pointer;
     background-color:            transparent;
     text-color:                  @secondary;
     children: [ "element-text", "element-icon" ];
 }
 
-element selected.normal {
+element.selected.normal {
     text-color:                  @outline;
     border-radius:               1.5em;
 }
+
 
 element normal.normal {
     background-color:            inherit;
