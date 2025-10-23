@@ -62,7 +62,7 @@ echo ":: Wallpaper Filename: $wallpaperfilename"
 # -----------------------------------------------------
 
 echo ":: Execute matugen with $used_wallpaper"
-$HOME/.cargo/bin/matugen image $used_wallpaper -m "dark"
+$HOME/.cargo/bin/matugen image "$used_wallpaper" -m "dark"
 
 # -----------------------------------------------------
 # Created blurred wallpaper
