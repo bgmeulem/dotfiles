@@ -6,3 +6,5 @@ dotfiles/.config/rofi/colors.rasi
 dotfiles/.config/swaync/colors.css
 dotfiles/.config/waybar/colors.css
 dotfiles/.config/wlogout/colors.css
+dotfiles/.config/swayosd/colors.css
+dotfiles/.config/foot/colors.ini
