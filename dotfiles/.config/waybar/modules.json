@@ -40,8 +40,8 @@
     "return-type": "json",
     "exec": "~/.scripts/updates.sh",
     "interval": 1800,
-    "on-click": "~/.config/scripts/installupdates_wrapper.sh",
-    "on-click-right": "~/.config/scripts/software_wrapper.sh"
+    "on-click": "~/.scripts/installupdates_wrapper.sh",
+    "on-click-right": "~/.scripts/software_wrapper.sh"
   },
 
   // Wallpaper

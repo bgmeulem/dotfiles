@@ -10,7 +10,7 @@ Requirements:
   `catt` available on your PATH.
 
 Usage:
-  python cast_with_catt_audio.py /path/to/movie.mkv
+  uv run python cast_local_audio.py /path/to/movie.mkv
 """
 import os, sys, time, tempfile, threading, subprocess, platform
 import pychromecast

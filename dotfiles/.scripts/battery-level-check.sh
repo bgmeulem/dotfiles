@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SOUND_DIR="$HOME/.config/scripts"
+SOUND_DIR="$HOME/.scripts"
 ADAPTER="/sys/class/power_supply/ACAD"
 LOW_THRESHOLD=15
 FULL_THRESHOLD=96
