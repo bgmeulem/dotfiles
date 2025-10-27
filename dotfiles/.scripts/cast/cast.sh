@@ -22,23 +22,14 @@ LOCAL_AUDIO_SCRIPT="$SCRIPT_DIR/main.py"
 USE_LOCAL_AUDIO=false
 ARGS=()
 
-for arg in "$@"; do
-  case "$arg" in
-    --local-audio)
-      USE_LOCAL_AUDIO=true
-      ;;
-    *)
-      ARGS+=("$arg")
-      ;;
-  esac
-done
 
 # === Helper: reset Chromecast ===
 reset_chromecast() {
-  echo "Resetting Chromecast app..."
+  echo "Resetting chromecast device(s) ..."
   uv --project="$SCRIPT_DIR" run python - <<'PYCODE'
 import pychromecast
 casts, browser = pychromecast.get_chromecasts()
+print("Found {} casts".format(len(casts)))
 for c in casts:
     try:
         c.wait()
@@ -51,6 +42,23 @@ PYCODE
 }
 
 trap reset_chromecast EXIT
+
+for arg in "$@"; do
+  case "$arg" in
+    --local-audio)
+      USE_LOCAL_AUDIO=true
+      ;;
+    --reset)
+      # Cleanup is trapped on exit, so just exit
+      exit 0
+      ;;
+    *)
+      ARGS+=("$arg")
+      ;;
+  esac
+done
+
+
 
 # === Local-audio mode ===
 if $USE_LOCAL_AUDIO; then
