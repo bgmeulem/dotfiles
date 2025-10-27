@@ -14,6 +14,7 @@ Usage:
 """
 import os, sys, time, tempfile, threading, subprocess, platform
 import pychromecast
+import argparse
 
 VIDEO_FILE = sys.argv[1] if len(sys.argv) > 1 else None
 
@@ -87,12 +88,19 @@ class MPVIPC:
             return None
 
 
+class MyParser(argparse.ArgumentParser):
+    def error(self, message):
+        sys.stderr.write('error: %s\n' % message)
+        self.print_help()
+        sys.exit(2)
+
+
 def find_chromecast():
     """Return (cast, browser) for the first Chromecast found."""
     print("Searching for Chromecast devices...")
     chromecasts, browser = pychromecast.get_chromecasts()
     if not chromecasts:
-        print("No Chromecast found.")
+        print("No Chromecast found. If recently reset, wait until it's ready to play again.")
         sys.exit(1)
     cast = chromecasts[0]
     print(f"Using Chromecast: {cast.name} ({cast.cast_info.host})")
@@ -190,10 +198,8 @@ def sync_mpv_to_cast(mc, ipc):
         time.sleep(SYNC_INTERVAL)
 
 
-def main():
-    video = VIDEO_FILE
-    if video is None: raise ValueError("Please pass a video file")
-    srt_path = os.path.splitext(video)[0] + ".srt"
+
+def cast_with_local_audio(video, srt_path):
     muted = create_muted_video(video)
 
     print("Casting via catt...")
@@ -247,5 +253,81 @@ def main():
         pychromecast.discovery.stop_discovery(browser)
 
 
+def cast_normal(video, srt_path):
+    print("Casting via catt...")
+    catt_cmd = [
+        "catt", "cast", video,
+        "--subtitles", srt_path,
+        "--force-default"
+    ]
+    catt_proc = subprocess.Popen(catt_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+    cast, browser = find_chromecast()
+    mc = cast.media_controller
+
+    try:
+        catt_proc.wait()
+    except KeyboardInterrupt:
+        print("\nStopping...")
+    finally:
+        print("Cleaning up Chromecast and processes...")
+        try:
+            mc.stop()
+            time.sleep(0.5)
+            cast.quit_app()
+        except Exception:
+            pass
+        catt_proc.terminate()
+        pychromecast.discovery.stop_discovery(browser)
+
+
+def reset_chromecast():
+    print("Resetting Chromecast ...")
+    casts, browser = pychromecast.get_chromecasts()
+    if len(casts) == 0: 
+        print("No Chromecasts found. Make sure they're turned on and discoverable on this network.")
+    for c in casts:
+        try:
+            c.wait()
+            c.quit_app()
+            print(f"→ Chromecast {c.name} reset.")
+        except Exception as e:
+            print(f"Could not reset {c.name}: {e}")
+    pychromecast.discovery.stop_discovery(browser)
+
+
 if __name__ == "__main__":
-    main()
+    parser = MyParser()
+    parser = MyParser(
+        prog='Cast',
+        description='Cast video to Chromecast using catt (Cast All The Things). Extended to allow splitting video and audio stream, keeping audio playing locally. Useful when stream to e.g. a beamer or tv, but you want the audio to play on headphones or Bluetooth speakers, connected to the hosting device.'
+    )
+    parser.add_argument('filename', nargs="?", help="Path of a video file.")
+    parser.add_argument("--reset", action="store_true", help="Scan for chromecast devices and reset them.")
+    parser.add_argument("-s", "--subtitles", default="", help="Path of a subtitle file (optional). Can be .srt or .vtt. If none passed, I look for a subtitle file with the same name as the video file.")
+    parser.add_argument('-la', '--local-audio', action='store_true', help="Play audio on the local device instead of the casting device. Playing audio locally can be useful if you want to send the audio stream to a different device, e.g. via Bluetooth or AUX. Audio is kept in sync with the video.")
+    args = parser.parse_args()
+
+    if args.reset: 
+        reset_chromecast()
+        exit(0)
+
+    video = args.filename
+    subs = args.subtitles
+    if video is None: raise ValueError("Please pass a video file")
+    potential_srt_path = os.path.splitext(video)[0] + ".srt"
+    if subs == None and os.path.exists(potential_srt_path): 
+        srt_path = potential_srt_path
+    elif subs != "" and not os.path.exists(subs): 
+        raise ValueError("Could not find the subtitle file: {}".format(subs))
+    else: 
+        srt_path = subs
+    
+    print(f"Casting: {video}")
+    print(f"Using local audio: {args.local_audio}")
+    print(f"Subtitles: {srt_path or 'None found'}")
+
+    if args.local_audio:
+        cast_with_local_audio(video, srt_path)
+    else:
+        cast_normal(video, srt_path)
