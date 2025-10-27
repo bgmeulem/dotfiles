@@ -13,3 +13,5 @@ alias dots="cd ~/dotfiles"
 # System
 # -----------------------------------------------------
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
+alias cast="$HOME/.scripts/cast/cast.sh"
