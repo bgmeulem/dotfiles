@@ -16,6 +16,7 @@ import os, sys, time, tempfile, threading, subprocess, platform
 import pychromecast
 
 VIDEO_FILE = sys.argv[1] if len(sys.argv) > 1 else None
+
 SYNC_INTERVAL = 0.3
 DRIFT_THRESHOLD = 0.15  # seconds
 
@@ -114,7 +115,6 @@ def create_muted_video(src_path):
     return tmp_muted
 
 
-
 def mpv_start_audio(path, start_pos):
     """Launch mpv with IPC for local audio only."""
     try:
@@ -189,8 +189,6 @@ def sync_mpv_to_cast(mc, ipc):
             time.sleep(1)
         time.sleep(SYNC_INTERVAL)
 
-
-# === Main ===
 
 def main():
     video = VIDEO_FILE
