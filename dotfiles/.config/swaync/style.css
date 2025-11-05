@@ -32,14 +32,9 @@
   padding: 0.8em 0.5em;
 }
 
-.notification *:hover {
-    background: none;
-}
-
 .notification:hover {
   background: #E5E3DC;
 }
-
 
 .notification-content .body {
   font-family: "Fira Sans";
