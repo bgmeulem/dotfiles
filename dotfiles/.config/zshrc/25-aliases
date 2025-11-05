@@ -14,4 +14,6 @@ alias dots="cd ~/dotfiles"
 # -----------------------------------------------------
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
-alias cast="$HOME/.scripts/cast/cast.sh"
+alias cast="$HOME/.scripts/cast-local-audio/cast.sh"
+
+alias somalogin="$HOME/.ssh/somalogin.sh"
