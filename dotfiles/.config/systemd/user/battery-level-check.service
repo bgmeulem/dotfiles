@@ -4,4 +4,4 @@ After=graphical-session.target
 
 [Service]
 Type=oneshot
-ExecStart=/home/bgmeulem/.config/scripts/battery-level-check.sh
+ExecStart=/home/bgmeulem/.scripts/battery-level-check.sh
