@@ -1,1 +1,1 @@
-$(cat ~/.config/hypr/conf/terminal.conf) -e ~/.scripts/installupdates.sh
+$(cat ~/.config/defaults/terminal.conf) -e ~/.scripts/installupdates.sh

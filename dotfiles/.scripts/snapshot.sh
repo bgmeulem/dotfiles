@@ -12,7 +12,7 @@
 sleep 1
 clear
 figlet -f smslant "Snapshot"
-aur_helper="$(cat ~/.config/ml4w/settings/aur.sh)"
+aur_helper="yay"
 
 _isInstalledAUR() {
     package="$1"

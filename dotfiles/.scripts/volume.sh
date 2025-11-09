@@ -2,7 +2,7 @@
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Scripts for volume controls for audio and mic 
 
-iDIR="$HOME/.config/swaync/icons"
+iDIR="$HOME/.config/swaync/icons" # currently unused - no icons here
 sDIR="$HOME/.scripts"
 
 # Get Volume
@@ -31,11 +31,7 @@ get_icon() {
 
 # Notify
 notify_user() {
-    if [[ "$(get_volume)" == "Muted" ]]; then
-        notify-send -e -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" " Muted"
-    else
-        # notify-send -e -h int:value:"$(get_volume | sed 's/%//')" -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" " $(get_volume)" &&
-        # notify-send -e -h int:value:"$(get_volume | sed 's/%//')" -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" " " &&
+    if [[ ! "$(get_volume)" == "Muted" ]]; then
         "$sDIR/sounds.sh" --volume
     fi
 }
@@ -46,7 +42,6 @@ inc_volume() {
         toggle_mute
     else
         swayosd-client --output-volume raise && notify_user
-        # pamixer -i 5 --allow-boost --set-limit 150 && notify_user
     fi
 }
 
@@ -62,12 +57,6 @@ dec_volume() {
 
 # Toggle Mute
 toggle_mute() {
-	# if [ "$(pamixer --get-mute)" == "false" ]; then
-	# 	pamixer -m && notify-send -e -u low -i "$iDIR/volume-mute.png" " Muted"
-	# elif [ "$(pamixer --get-mute)" == "true" ]; then
-	# 	pamixer -u && notify-send -e -u low -i "$(get_icon)" " Unmuted"
-	# fi
-        # Sink volume toggle mute
     swayosd-client --output-volume mute-toggle
 }
 
@@ -102,6 +91,7 @@ get_mic_volume() {
 
 # Notify for Microphone
 notify_mic_user() {
+    # Currently unused
     volume=$(get_mic_volume)
     icon=$(get_mic_icon)
     notify-send -e -h int:value:"$volume" -h "string:x-canonical-private-synchronous:volume_notif" -u low -i "$icon"  " Mic Level:" " $volume"
@@ -134,16 +124,16 @@ elif [[ "$1" == "--dec" ]]; then
 	dec_volume
 elif [[ "$1" == "--toggle" ]]; then
 	toggle_mute
-elif [[ "$1" == "--toggle-mic" ]]; then
-	toggle_mic
-elif [[ "$1" == "--get-icon" ]]; then
-	get_icon
-elif [[ "$1" == "--get-mic-icon" ]]; then
-	get_mic_icon
-elif [[ "$1" == "--mic-inc" ]]; then
-	inc_mic_volume
-elif [[ "$1" == "--mic-dec" ]]; then
-	dec_mic_volume
+# elif [[ "$1" == "--toggle-mic" ]]; then
+# 	toggle_mic
+# elif [[ "$1" == "--get-icon" ]]; then
+# 	get_icon
+# elif [[ "$1" == "--get-mic-icon" ]]; then
+# 	get_mic_icon
+# elif [[ "$1" == "--mic-inc" ]]; then
+# 	inc_mic_volume
+# elif [[ "$1" == "--mic-dec" ]]; then
+# 	dec_mic_volume
 else
 	get_volume
 fi

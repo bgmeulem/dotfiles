@@ -17,42 +17,18 @@ if [ $instance_count -gt 1 ]; then
 fi
 
 
-install_platform="$(cat ~/.config/ml4w/settings/platform.sh)"
+install_platform="arch"
+aur_helper="yay"
 
-# Check if platform is supported
-case $install_platform in
-    arch)
-        aur_helper="$(cat ~/.config/ml4w/settings/aur.sh)"
+# check_lock_files
+local pacman_lock="/var/lib/pacman/db.lck"
+local checkup_lock="${TMPDIR:-/tmp}/checkup-db-${UID}/db.lck"
 
-        # ----------------------------------------------------- 
-        # Calculate available updates
-        # ----------------------------------------------------- 
+while [ -f "$pacman_lock" ] || [ -f "$checkup_lock" ]; do
+    sleep 1
+done
 
-        # flatpak remote-ls --updates
-
-        # -----------------------------------------------------------------------------
-        # Check for pacman or checkupdates-with-aur database lock and wait if necessary
-        # -----------------------------------------------------------------------------
-        check_lock_files() {
-            local pacman_lock="/var/lib/pacman/db.lck"
-            local checkup_lock="${TMPDIR:-/tmp}/checkup-db-${UID}/db.lck"
-
-            while [ -f "$pacman_lock" ] || [ -f "$checkup_lock" ]; do
-                sleep 1
-            done
-        }
-
-        check_lock_files
-
-        updates=$(checkupdates-with-aur | wc -l)
-    ;;
-    fedora)
-        updates=$(dnf check-update -q | grep -c ^[a-z0-9])
-    ;;
-    *)
-        updates=0
-    ;;
-esac
+updates=$(checkupdates-with-aur | wc -l)
 
 # ----------------------------------------------------- 
 # Output in JSON format for Waybar Module custom-updates
