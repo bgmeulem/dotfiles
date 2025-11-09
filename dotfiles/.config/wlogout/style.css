@@ -1,23 +1,13 @@
-/* -----------------------------------------------------
- * Import Pywal colors
- * ----------------------------------------------------- */
 @import 'colors.css';
-
-/* -----------------------------------------------------
- * General
- * ----------------------------------------------------- */
-
 * {
-    font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-	background-image: none;
+	font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
 	box-shadow: none;
 }
 
 window {
 	background-image: url("/home/bgmeulem/.cache/waypaper/blurred_wallpaper.png");
 	background-size: cover;
-	font-size: 16pt;
-	color: #cdd6f4;
+	font-size: 16;
 }
 
 button {
@@ -25,65 +15,39 @@ button {
     	background-position: center;
     	background-size: 20%;
     	background-color: rgba(200, 220, 255, 0);
-    	border-radius: 80px; /* Increased border radius for a more rounded look */
+    	border-radius: 20px;
 	border:0px;
-}
-
-button:focus {
-    background-size: 22%;
-	border: 0px;
+	min-width: 10em;
+	margin-top: 10em;
+	margin-bottom: 10em;
 }
 
 button:hover {
-    background-color: black;
-    opacity: 0.8;
-    margin: 30px;
-    border-radius: 80px;
+    background-size: 25%;
+    background-color: rgba(0, 0, 0, .5);
 }
 
-/* Adjust the size of the icon or content inside the button */
-button span {
-    font-size: 1.2em; /* Increase the font size */
-}
-
-/*
------------------------------------------------------
-Buttons
------------------------------------------------------
-*/
 
 #lock {
-	margin: 10px;
-	border-radius: 20px;
 	background-image: image(url("icons/lock.png"));
 }
 
 #logout {
-	margin: 10px;
-	border-radius: 20px;
 	background-image: image(url("icons/logout.png"));
 }
 
 #suspend {
-	margin: 10px;
-	border-radius: 20px;
 	background-image: image(url("icons/suspend.png"));
 }
 
 #hibernate {
-	margin: 10px;
-	border-radius: 20px;
 	background-image: image(url("icons/hibernate.png"));
 }
 
 #shutdown {
-	margin: 10px;
-	border-radius: 20px;
 	background-image: image(url("icons/shutdown.png"));
 }
 
 #reboot {
-	margin: 10px;
-	border-radius: 20px;
 	background-image: image(url("icons/reboot.png"));
 }
