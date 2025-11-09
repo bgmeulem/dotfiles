@@ -288,6 +288,7 @@ require('lazy').setup({
             },
           },
         },
+        clangd = {},
       }
       require('mason').setup()
       -- You can add other tools here that you want Mason to install
