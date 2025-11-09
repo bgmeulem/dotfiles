@@ -8,7 +8,6 @@
     "~/.config/waybar/modules.json"
   ],
   "modules-left": [
-    "hyprland/workspaces",
     "ext/workspaces"
   ],
   "modules-center": [
