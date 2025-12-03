@@ -4,5 +4,7 @@
 @define-color  soft-white-02 rgba(237, 238, 227, 0.2);
 @define-color  soft-white2 #E5E3DC;
 @define-color  soft-black #222222;
-@define-color  soft-black-02 rgba(64, 64, 64, 0.2);
+@define-color  soft-black-08 rgba(64, 64, 64, 0.8);
+@define-color  soft-black-06 rgba(64, 64, 64, 0.6);
 @define-color  soft-black-04 rgba(64, 64, 64, 0.4);
+@define-color  soft-black-02 rgba(64, 64, 64, 0.2);
