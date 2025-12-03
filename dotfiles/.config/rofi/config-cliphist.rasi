@@ -28,26 +28,16 @@ configuration {
     
 }
 
-/* ---- Load font ---- */
-@import "~/.config/ml4w/settings/rofi-font.rasi"
-
 /* ---- Load colors ---- */
 @theme "~/.config/rofi/colors.rasi"
+@import "~/.config/my_colors.rasi"
 
-/* ---- Load wallpaper ---- */
-@import "~/.config/ml4w/cache/current_wallpaper.rasi"
-
-/* ---- Load border width ---- */
-@import "~/.config/ml4w/settings/rofi-border.rasi"
-
-/* ---- Load border radius ---- */
-@import "~/.config/ml4w/settings/rofi-border-radius.rasi"
 
 /* ---- Map colors ---- */
 * {
-    color11: @primary;
-    color5: @on-primary-fixed;
-    foreground: @on-surface;
+    color11: @soft-white;
+    color5: @soft-white2;
+    foreground: @soft-black;
 }
 
 // Main //
@@ -59,7 +49,6 @@ window {
     padding:                      0px;
     margin:                       0px; 
     color:                      #FFFFFF;
-    border:                       @border-width;
     border-color:                 @color11;
     cursor:                       "default";
     transparency:                 "real";
@@ -67,8 +56,8 @@ window {
     anchor:                       northeast;
     fullscreen:                   false;
     enabled:                      true;
-    border-radius:                @border-radius;
-    background-color:             transparent;
+    border-radius:                1em;
+    background-color:             @color11;
 }
 
 mainbox {
@@ -77,17 +66,9 @@ mainbox {
     padding:                     0em;
     orientation:                 horizontal;
     children:                    [ "listbox" ];
-    background-color:            transparent;
-    background-image:            @current-image;
+    background-color:            @color11;
 }
 
-/* ---- Imagebox ---- */
-imagebox {
-    padding:                      1em;
-    background-color:             transparent;
-    orientation:                  horizontal;
-    children:                     [ "inputbar" ];
-}
 
 // Inputs //
 inputbar {
@@ -107,7 +88,6 @@ textbox-prompt-colon {
     text-color:                  @foreground;
     border-radius:               2em 0em 0em 2em;
     background-color:            @color5;
-    background-image:            url("~/.config/ml4w/cache/current_wallpaper", width);
 }
 
 entry {
@@ -151,27 +131,6 @@ listview {
 }
 
 
-// Modes //
-mode-switcher {
-    orientation:                 vertical;
-    width:                       6.6em;
-    enabled:                     true;
-    padding:                     1.5em;
-    spacing:                     1.5em;
-    background-color:            transparent;
-}
-
-button {
-    cursor:                      pointer;
-    border-radius:               2em;
-    background-color:            @background;
-    text-color:                  @foreground;
-}
-
-button selected {
-    background-color:            @color5;
-    text-color:                  @background;
-}
 
 // Elements //
 element {
@@ -181,7 +140,7 @@ element {
     cursor:                      pointer;
     background-color:            transparent;
     text-color:                  @foreground;
-    border-radius:               1.1em;
+    border-radius:               0.7em;
 }
 
 element selected.normal {
