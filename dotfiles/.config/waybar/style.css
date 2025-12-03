@@ -1,14 +1,19 @@
+/*
+* this is GTK css, a subset of normal css
+* see: https://docs.gtk.org/gtk3/css-properties.html
+*
+* This file is split in three parts: 
+* 1. general settings
+* 2. horizontal layout
+* 3. vertical layout
+*/
+
 @import '../my_colors.css';
 @import 'colors.css';
 * {
-    all: unset;
-    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    border: none;
-    border-radius: 0px;
-    min-height: 0;
+    font-family: "Fira Sans Semibold", "Font Awesome 6 Free";
     color: @soft-black;
 }
-
 
 #cpu,
 #tray,
@@ -23,50 +28,34 @@
 #custom-power-menu {
   font-size: 16px;
   min-width: 12px;
-  margin: 0 10px;
-}
-
-#custom-updates {
-    /* top padding otherwise it -looks- (but isnt)slightly too high */
-    padding: 2px 0px 0px 0px;
-    background-color: @backgroundlight;
-    border-radius: 10px;
 }
 
 #custom-updates.update-class {
     background: transparent;
 }
 
-/* -----------------------------------------------------
- * Workspaces
- * ----------------------------------------------------- */
-
 #workspaces {
-    /* background: @workspacesbackground1; */
     border: 0px;
-    /* font-weight: bold; */
-    /* font-style: normal; */
     font-size: 0px;
 }
 
 #workspaces button {
   all: initial;
-  margin: 9px 3px;
   font-size: 0px;
   border-radius: 6px;
   border: 0px;
-  min-width: 12px;
-  background-color: @soft-white;
+  background-color: @soft-black;
+  opacity: 0.6;
   transition: all 0.3s ease-in-out;
-  opacity: 0.3;
+  min-width: 12px;
+  min-height: 12px;
 }
 
 #workspaces button.active {
-    background: @blur_background8;
-    border-radius: 6px;
-    min-width: 40px;
-    transition: all 0.3s ease-in-out;
+    background: @soft-black;
     opacity:1.0;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
 }
 
 #workspaces button:not(.active):hover {
@@ -75,10 +64,6 @@
     border-radius: 6px;
     opacity:0.7;
 }
-
-/* -----------------------------------------------------
- * Tooltips
- * ----------------------------------------------------- */
 
 tooltip {
     border-radius: 16px;
@@ -92,32 +77,6 @@ tooltip label {
     padding: 5px 5px;  /* ← THIS is what actually adds inner spacing */
 }
 
-/* -----------------------------------------------------
- * Window
- * ----------------------------------------------------- */
-
-#window {
-    background: transparent;
-    border-radius: 12px;
-    font-size:16px;
-    font-weight:normal;
-    opacity:0.8;
-}
-
-window#waybar {
-    background-color: @soft-white-04;
-}
-/* -----------------------------------------------------
- * Modules
- * ----------------------------------------------------- */
-
-.modules-left  {
-  margin-left: 8px;
-}
-
-.modules-right  {
-    margin-right: 8px;
-}
 
 /* idk which subclass to target, so I just remove all */
 #tray * {
@@ -144,5 +103,82 @@ window#waybar {
 window#waybar menu {
     margin: 0.5em 2em 0.5em 0.5em;
     padding-left: 0;
+}
+
+/* ------- Horizontal layout --------- */
+window#waybar {
+    background-color: @soft-white-04;
+}
+
+.horizontal #cpu,
+.horizontal #tray,
+.horizontal #battery,
+.horizontal #network,
+.horizontal #bluetooth,
+.horizontal #clock,
+.horizontal #pulseaudio,
+.horizontal #custom-updates,
+.horizontal #custom-exit,
+.horizontal #idle_inhibitor,
+.horizontal #custom-power-menu {
+  margin: 0 10px;
+}
+
+.horizontal .modules-left  {
+  margin-left: 8px;
+}
+
+.horizontal #custom-updates {
+    /* add top padding otherwise it looks (but isn't actually) slightly too high */
+    padding: 2px 0px 0px 0px;
+}
+
+.horizontal #workspaces button {
+  margin: 9px 3px;
+}
+
+.horizontal #workspaces button.active {
+    min-width: 40px;
+}
+
+.horizontal .modules-right  {
+    margin-right: 8px;
+}
+/* ------- Vertical layout --------- */
+
+window#waybar.left {
+    border: 1px solid @soft-white;
+    border-radius: 1em;
+    background-color: @soft-white-08;
+}
+
+.vertical #cpu,
+.vertical #tray,
+.vertical #battery,
+.vertical #network,
+.vertical #bluetooth,
+.vertical #clock,
+.vertical #pulseaudio,
+.vertical #custom-updates,
+.vertical #custom-exit,
+.vertical #idle_inhibitor {
+  margin: 10px 10px;
+}
+
+/* add top padding for visual pleasantry*/
+.vertical .modules-left {
+    padding: 0em 0em 2em 0em;
+}
+
+.vertical .modules-right {
+    padding: 2em 0em 0em 0em;
+}
+
+.vertical #workspaces button {
+  margin: 3px 18px;
+}
+
+.vertical #workspaces button.active {
+    min-height: 40px;
 }
 

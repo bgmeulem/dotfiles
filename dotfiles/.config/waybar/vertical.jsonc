@@ -1,0 +1,74 @@
+{
+  "reload_style_on_change": true,
+  "class": "vertical",
+  "layer": "top",
+  "position": "left",
+  "spacing": 0,
+  "height": 2, // smallest number that is interpreted as a pixel: will just autoscale
+  "margin-left": 10,
+  "margin-right": 10,
+  "include": [
+    "~/.config/waybar/modules.json"
+  ],
+  "modules-left": [
+    "clock"
+  ],
+  "modules-center": [
+    "ext/workspaces"
+  ],
+  "modules-right": [
+    "custom/updates",
+    "tray",
+    "bluetooth",
+    "pulseaudio",
+    "idle_inhibitor",
+    "battery",
+    "custom/exit",
+  ],
+  "clock": {
+    "justify": "center",
+    "format": "{:%H\n%M}",
+    "format-alt": "{:%d\n%b}",
+    "tooltip": false,
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-discharging": "{icon}",
+    "format-charging":    "{icon}",
+    "format-plugged":     "",
+    "format-icons": {
+      "charging": [
+        "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"
+      ],
+      "default": [
+        "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+      ]
+    },
+    "format-full": "󰂅",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "blueberry"
+  },
+  "custom/updates": {
+    "justify": "center",
+    "format": "{}\n ",
+  },
+  "tray": {
+    "spacing": 20,
+    "justify": "center",
+  },
+  "custom/exit": {
+      "justify": "center",
+    }
+}
