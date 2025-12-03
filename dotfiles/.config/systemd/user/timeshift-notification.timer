@@ -1,0 +1,10 @@
+[Unit]
+Description=Run timeshift notification every month
+Requires=timeshift-notification.service
+
+[Timer]
+OnCalendar=monthly
+Persistent=true
+
+[Install]
+WantedBy=timers.target
