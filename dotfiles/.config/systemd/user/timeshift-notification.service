@@ -1,5 +1,5 @@
 [Unit]
-Description=Battery Status Check
+Description=Ping user for a timeshift backup
 After=graphical-session.target
 
 [Service]
