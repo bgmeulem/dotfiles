@@ -34,7 +34,9 @@ handle_full_charge () {
 
 handle_low_battery() {
     # Handle low battery notifications
-    if [[ "$BATTERY_CAPACITY" -le "$LOW_THRESHOLD" ]] && [[ "$BATTERY_STATUS" != "Charging" ]]; then
+    if  [[ "$BATTERY_CAPACITY" -le "$LOW_THRESHOLD" ]] && \
+        [[ "$BATTERY_STATUS" != "Charging" ]] && \
+        [[ $(("$BATTERY_CAPACITY" % 5)) -eq 0 ]]; then
         # Only show low battery notification if power is NOT connected
         if ! is_power_connected; then
             # Display a low battery notification and store its ID
