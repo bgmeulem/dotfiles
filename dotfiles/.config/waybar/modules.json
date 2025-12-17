@@ -62,7 +62,7 @@
     "escape": true
   },
 
-  // Hypridle inhibitor
+  // Idle inhibitor
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
